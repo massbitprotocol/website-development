@@ -33,6 +33,7 @@ am5.ready(function() {
         fontSize: "12px",
         fill: am5.color(0x717591),
         paddingTop: 15,
+        oversizedBehavior: 'fit'
     });
 
     var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
@@ -77,7 +78,7 @@ am5.ready(function() {
     });
 
     // Set data from API
-    $('#reportFilter2').val(3);
+    $('#reportFilter2').val(4);
     loadData((res) => {
         setData(res)
     })

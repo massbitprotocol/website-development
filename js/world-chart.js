@@ -13,10 +13,10 @@ am5.ready(function() {
     // ====================================
 
     var chart = root.container.children.push(am5map.MapChart.new(root, {
-        panX: "none",
-        panY: "none",
-        wheelY: "none",
-        pinchZoom: false,
+        // panX: "none",
+        // panY: "none",
+        // wheelY: "none",
+        pinchZoom: true,
         fill: "0xf3f3f3"
     }));
     var continentSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
