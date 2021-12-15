@@ -31,7 +31,8 @@ am5.ready(function() {
     var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
     xRenderer.labels.template.setAll({
         fontSize: "12px",
-        fill: am5.color(0x717591)
+        fill: am5.color(0x717591),
+        paddingTop: 15,
     });
 
     var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {

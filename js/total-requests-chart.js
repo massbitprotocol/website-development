@@ -15,10 +15,11 @@ am5.ready(function() {
     // Create chart
     // https://www.amcharts.com/docs/v5/charts/xy-chart/
     var chart = root.container.children.push(am5xy.XYChart.new(root, {
-        panX: false,
         panY: false,
+        wheelY: "zoomX",
+        layout: root.verticalLayout,
+        maxTooltipDistance: 0
     }));
-
     // Add cursor
     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
     var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
@@ -29,15 +30,16 @@ am5.ready(function() {
     var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
     xRenderer.labels.template.setAll({
         fontSize: "14px",
-        fill: am5.color(0x717591)
+        fill: am5.color(0x717591),
+        paddingTop: 15,
     });
     // Create axes
     // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
     var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-        maxDeviation: 0,
+        maxDeviation: 0.3,
         baseInterval: {
             timeUnit: "day",
-            count: 2
+            count: 1
         },
         renderer: xRenderer,
         tooltip: am5.Tooltip.new(root, {})
@@ -49,7 +51,8 @@ am5.ready(function() {
         fill: am5.color(0x717591)
     });
     var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-        renderer: yRenderer
+        renderer: yRenderer,
+        baseValue: 0
     }));
 
     var myTooltip = am5.Tooltip.new(root, {
@@ -97,7 +100,7 @@ am5.ready(function() {
     function loadData(callbackFn) {
         let fromDate = moment();
         let toDate = moment();
-        xAxis.get("baseInterval").count = 2;
+        xAxis.get("baseInterval").count = 1;
         switch ($('#reportFilter1').val()) {
             case "2":
                 {
