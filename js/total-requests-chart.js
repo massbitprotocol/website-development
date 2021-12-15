@@ -3,9 +3,7 @@ am5.ready(function() {
     // Create root element
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
     var root = am5.Root.new("totalRequestsChart");
-    // root.numberFormatter.setAll({
-    //     numberFormat: "#a"
-    // })
+
 
     // Set themes
     // https://www.amcharts.com/docs/v5/concepts/themes/
@@ -18,45 +16,47 @@ am5.ready(function() {
     // https://www.amcharts.com/docs/v5/charts/xy-chart/
     var chart = root.container.children.push(am5xy.XYChart.new(root, {
         panX: false,
-        panY: false
+        panY: false,
     }));
+
     // Add cursor
     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
     var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
         behavior: "none"
     }));
-    cursor.lineX.set("visible", false);
+    cursor.lineY.set("visible", false);
 
-    var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
+
+    // Create axes
+    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+    var xRenderer = am5xy.AxisRendererX.new(root, {});
     xRenderer.labels.template.setAll({
         fontSize: "14px",
         fill: am5.color(0x717591),
         paddingTop: 15,
         minGridDistance: 30
     });
-    // Create axes
-    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
     var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-        maxDeviation: 0.3,
+        maxDeviation: 0.5,
         baseInterval: {
             timeUnit: "day",
             count: 1
         },
-        renderer: xRenderer,
         startLocation: 0.4,
         endLocation: 0.6,
+        renderer: xRenderer,
         tooltip: am5.Tooltip.new(root, {})
     }));
 
     var yRenderer = am5xy.AxisRendererY.new(root, {});
     yRenderer.labels.template.setAll({
         fontSize: "14px",
-        fill: am5.color(0x717591),
-        numberFormat: "#a"
+        fill: am5.color(0x717591)
     });
     var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-        renderer: yRenderer,
-        baseValue: 0
+        maxDeviation: 1,
+        numberFormat: '#a',
+        renderer: yRenderer
     }));
 
     var myTooltip = am5.Tooltip.new(root, {
@@ -71,16 +71,16 @@ am5.ready(function() {
     // Add series
     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
     var series = chart.series.push(am5xy.SmoothedXLineSeries.new(root, {
-        name: "Total Requets",
+        name: "Series",
         xAxis: xAxis,
         yAxis: yAxis,
         valueYField: "value",
         valueXField: "date",
         tooltip: myTooltip,
-        sequencedInterpolation: true,
         fill: am5.color(0xE9EBFA),
         stroke: am5.color(0x2C3ACF)
     }));
+
     series.fills.template.setAll({
         visible: true,
         fillOpacity: 0.7,
@@ -88,6 +88,8 @@ am5.ready(function() {
     series.strokes.template.setAll({
         strokeWidth: 3,
     });
+
+
 
     // Set data from API
     jQuery('#reportFilter1').val(3);
@@ -104,9 +106,6 @@ am5.ready(function() {
     function loadData(callbackFn) {
         let fromDate = moment();
         let toDate = moment();
-        xRenderer.labels.template.setAll({
-            fontSize: "14px"
-        });
         switch (jQuery('#reportFilter1').val()) {
             case "2":
                 {
@@ -124,27 +123,18 @@ am5.ready(function() {
                 {
                     fromDate = moment().subtract(29, 'days');
                     toDate = moment();
-                    xRenderer.labels.template.setAll({
-                        fontSize: "10px"
-                    });
                     break
                 }
             case "5":
                 {
                     fromDate = moment().startOf('month');
                     toDate = moment().endOf('month');
-                    xRenderer.labels.template.setAll({
-                        fontSize: "10px"
-                    });
                     break
                 }
             case "6":
                 {
                     fromDate = moment().subtract(1, 'month').startOf('month');
                     toDate = moment().subtract(1, 'month').endOf('month');
-                    xRenderer.labels.template.setAll({
-                        fontSize: "10px"
-                    });
                     break
                 }
         }
@@ -183,4 +173,5 @@ am5.ready(function() {
         series.appear(1000);
         chart.appear(1000, 100);
     }
+
 }); // end am5.ready()

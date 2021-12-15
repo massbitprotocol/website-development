@@ -28,22 +28,31 @@ am5.ready(function() {
 
     // Create axes
     // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-    var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
+    var xRenderer = am5xy.AxisRendererX.new(root, {});
     xRenderer.labels.template.setAll({
-        fontSize: "12px",
+        fontSize: "14px",
         fill: am5.color(0x717591),
         paddingTop: 15,
-        oversizedBehavior: 'fit'
+        minGridDistance: 30
     });
-    var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-        maxDeviation: 0.3,
-        categoryField: "date",
+    var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+        maxDeviation: 0.5,
+        baseInterval: {
+            timeUnit: "day",
+            count: 1
+        },
         renderer: xRenderer,
         tooltip: am5.Tooltip.new(root, {})
     }));
+
+    var yRenderer = am5xy.AxisRendererY.new(root, {});
+    yRenderer.labels.template.setAll({
+        fontSize: "14px",
+        fill: am5.color(0x717591)
+    });
     var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
         maxDeviation: 0.3,
-        renderer: am5xy.AxisRendererY.new(root, {})
+        renderer: yRenderer
     }));
 
     var myTooltip = am5.Tooltip.new(root, {
@@ -62,8 +71,8 @@ am5.ready(function() {
         xAxis: xAxis,
         yAxis: yAxis,
         valueYField: "value",
+        valueXField: "date",
         sequencedInterpolation: true,
-        categoryXField: "date",
         seriesTooltipTarget: "bullet",
         tooltip: myTooltip,
     }));
@@ -76,12 +85,12 @@ am5.ready(function() {
     });
 
     // Set data from API
-    $('#reportFilter2').val(4);
+    jQuery('#reportFilter2').val(3);
     loadData((res) => {
         setData(res)
     })
 
-    $('#reportFilter2').on('change', () => {
+    jQuery('#reportFilter2').on('change', () => {
         loadData((res) => {
             setData(res);
         })
@@ -90,10 +99,7 @@ am5.ready(function() {
     function loadData(callbackFn) {
         let fromDate = moment();
         let toDate = moment();
-        xRenderer.labels.template.setAll({
-            fontSize: "14px"
-        });
-        switch ($('#reportFilter2').val()) {
+        switch (jQuery('#reportFilter2').val()) {
             case "2":
                 {
                     fromDate = moment().subtract(1, 'days');
@@ -110,32 +116,23 @@ am5.ready(function() {
                 {
                     fromDate = moment().subtract(29, 'days');
                     toDate = moment();
-                    xRenderer.labels.template.setAll({
-                        fontSize: "10px"
-                    });
                     break
                 }
             case "5":
                 {
                     fromDate = moment().startOf('month');
                     toDate = moment().endOf('month');
-                    xRenderer.labels.template.setAll({
-                        fontSize: "10px"
-                    });
                     break
                 }
             case "6":
                 {
                     fromDate = moment().subtract(1, 'month').startOf('month');
                     toDate = moment().subtract(1, 'month').endOf('month');
-                    xRenderer.labels.template.setAll({
-                        fontSize: "10px"
-                    });
                     break
                 }
         }
-        $('#txtDateRange2').text(`${fromDate.format("MMM DD")} - ${toDate.format("MMM DD")}`);
-        $.ajax({
+        jQuery('#txtDateRange2').text(`${fromDate.format("MMM DD")} - ${toDate.format("MMM DD")}`);
+        jQuery.ajax({
             url: "https://dapi.massbit.io/api/v1?action=stat.dapi&fromDate=" + fromDate.format('YYYY-MM-DD') + "&toDate=" + toDate.format('YYYY-MM-DD'),
             type: 'GET',
             dataType: 'json',
@@ -168,12 +165,12 @@ am5.ready(function() {
     function setData(resX) {
         // Binding value
         const niceB = niceBytes(resX.bandwidth.total);
-        $('#txtTotalBandwidth').text(numberWithCommas(niceB.value));
-        $('#txtTotalBandwidthUnit').text(niceB.unit);
+        jQuery('#txtTotalBandwidth').text(numberWithCommas(niceB.value));
+        jQuery('#txtTotalBandwidthUnit').text(niceB.unit);
         // Generate chart
         var data = resX.bandwidth.data.map((e, i) => {
             return {
-                date: moment(e.date).format("MMM DD"),
+                date: new Date(e.date).getTime(),
                 value: Number(niceBytes(e.value).value),
                 label: niceBytes(e.value).unit
             }

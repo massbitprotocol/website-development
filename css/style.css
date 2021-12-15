@@ -2255,9 +2255,17 @@ footer ul li a:hover {
         font-size: 18px;
         line-height: 24px;
     }
+    .mb-why-item {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }
 
 @media(max-width:1199px) {
+    .mb-why-item-title {
+        font-size: 16px;
+        line-height: 22px;
+    }
     .mb-build-item-custom .mb-build-item-title {
         font-size: 24px;
     }
@@ -2279,6 +2287,10 @@ footer ul li a:hover {
         height: 6rem;
         margin-bottom: 10px;
         display: block;
+    }
+    .mb-why-item,
+    .mb-why-item-description {
+        text-align: center !important;
     }
 }
 
