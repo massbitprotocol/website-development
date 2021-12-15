@@ -24,7 +24,7 @@ am5.ready(function() {
     var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
         behavior: "none"
     }));
-    cursor.lineY.set("visible", false);
+    cursor.lineX.set("visible", false);
 
     var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
     xRenderer.labels.template.setAll({
@@ -37,7 +37,7 @@ am5.ready(function() {
         maxDeviation: 0,
         baseInterval: {
             timeUnit: "day",
-            count: 1
+            count: 2
         },
         renderer: xRenderer,
         tooltip: am5.Tooltip.new(root, {})
@@ -83,7 +83,7 @@ am5.ready(function() {
     });
 
     // Set data from API
-    $('#reportFilter1').val(4);
+    $('#reportFilter1').val(3);
     loadData((res) => {
         setData(res)
     })
@@ -97,35 +97,39 @@ am5.ready(function() {
     function loadData(callbackFn) {
         let fromDate = moment();
         let toDate = moment();
+        xAxis.get("baseInterval").count = 2;
         switch ($('#reportFilter1').val()) {
-            case 2:
+            case "2":
                 {
                     fromDate = moment().subtract(1, 'days');
                     toDate = moment().subtract(1, 'days');
                     break
                 }
-            case 3:
+            case "3":
                 {
                     fromDate = moment().subtract(6, 'days');
                     toDate = moment();
                     break
                 }
-            case 4:
+            case "4":
                 {
                     fromDate = moment().subtract(29, 'days');
                     toDate = moment();
+                    xAxis.get("baseInterval").count = 4;
                     break
                 }
-            case 5:
+            case "5":
                 {
                     fromDate = moment().startOf('month');
                     toDate = moment().endOf('month');
+                    xAxis.get("baseInterval").count = 4;
                     break
                 }
-            case 6:
+            case "6":
                 {
                     fromDate = moment().subtract(1, 'month').startOf('month');
                     toDate = moment().subtract(1, 'month').endOf('month');
+                    xAxis.get("baseInterval").count = 4;
                     break
                 }
         }

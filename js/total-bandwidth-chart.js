@@ -24,20 +24,21 @@ am5.ready(function() {
     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
     var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
     cursor.lineX.set("visible", false);
-    cursor.lineY.set("visible", false);
+    // cursor.lineY.set("visible", false);
 
     // Create axes
     // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
     var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
     xRenderer.labels.template.setAll({
-        fontSize: "14px",
+        fontSize: "12px",
         fill: am5.color(0x717591)
     });
 
     var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
         maxDeviation: 0.3,
         categoryField: "date",
-        renderer: xRenderer
+        renderer: xRenderer,
+        tooltip: am5.Tooltip.new(root, {})
     }));
 
     var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
@@ -47,7 +48,7 @@ am5.ready(function() {
 
     var myTooltip = am5.Tooltip.new(root, {
         autoTextColor: false,
-        labelText: "{valueY} TB",
+        labelText: "{valueY} {label}",
     });
 
     myTooltip.label.setAll({
@@ -68,15 +69,14 @@ am5.ready(function() {
     }));
     series.columns.template.setAll({
         cornerRadiusTL: 5,
-        cornerRadiusTR: 5,
-        width: 50
+        cornerRadiusTR: 5
     });
     series.columns.template.adapters.add("fill", (fill, target) => {
         return '#2C3ACF';
     });
 
     // Set data from API
-    $('#reportFilter2').val(4);
+    $('#reportFilter2').val(3);
     loadData((res) => {
         setData(res)
     })
@@ -90,35 +90,47 @@ am5.ready(function() {
     function loadData(callbackFn) {
         let fromDate = moment();
         let toDate = moment();
+        xRenderer.labels.template.setAll({
+            fontSize: "14px"
+        });
         switch ($('#reportFilter2').val()) {
-            case 2:
+            case "2":
                 {
                     fromDate = moment().subtract(1, 'days');
                     toDate = moment().subtract(1, 'days');
                     break
                 }
-            case 3:
+            case "3":
                 {
                     fromDate = moment().subtract(6, 'days');
                     toDate = moment();
                     break
                 }
-            case 4:
+            case "4":
                 {
                     fromDate = moment().subtract(29, 'days');
                     toDate = moment();
+                    xRenderer.labels.template.setAll({
+                        fontSize: "10px"
+                    });
                     break
                 }
-            case 5:
+            case "5":
                 {
                     fromDate = moment().startOf('month');
                     toDate = moment().endOf('month');
+                    xRenderer.labels.template.setAll({
+                        fontSize: "10px"
+                    });
                     break
                 }
-            case 6:
+            case "6":
                 {
                     fromDate = moment().subtract(1, 'month').startOf('month');
                     toDate = moment().subtract(1, 'month').endOf('month');
+                    xRenderer.labels.template.setAll({
+                        fontSize: "10px"
+                    });
                     break
                 }
         }
@@ -138,15 +150,31 @@ am5.ready(function() {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
+    const units = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+    function niceBytes(x) {
+        let l = 0,
+            n = parseInt(x, 10) || 0;
+        while (n >= 1024 && ++l) {
+            n = n / 1024;
+        }
+        return ({
+            value: n.toFixed(n < 10 && l > 0 ? 1 : 0),
+            unit: units[l]
+        });
+    }
+
     function setData(resX) {
         // Binding value
-        $('#txtTotalBandwidth').text(numberWithCommas(resX.bandwidth.total));
-
+        const niceB = niceBytes(resX.bandwidth.total);
+        $('#txtTotalBandwidth').text(numberWithCommas(niceB.value));
+        $('#txtTotalBandwidthUnit').text(niceB.unit);
         // Generate chart
         var data = resX.bandwidth.data.map((e, i) => {
             return {
                 date: moment(e.date).format("MMM DD"),
-                value: e.value
+                value: Number(niceBytes(e.value).value),
+                label: niceBytes(e.value).unit
             }
         });
         xAxis.data.setAll(data);
