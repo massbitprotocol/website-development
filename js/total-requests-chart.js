@@ -15,10 +15,8 @@ am5.ready(function() {
     // Create chart
     // https://www.amcharts.com/docs/v5/charts/xy-chart/
     var chart = root.container.children.push(am5xy.XYChart.new(root, {
-        panY: false,
-        wheelY: "zoomX",
-        layout: root.verticalLayout,
-        maxTooltipDistance: 0
+        panX: false,
+        panY: false
     }));
     // Add cursor
     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
@@ -32,6 +30,7 @@ am5.ready(function() {
         fontSize: "14px",
         fill: am5.color(0x717591),
         paddingTop: 15,
+        minGridDistance: 0
     });
     // Create axes
     // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
@@ -73,10 +72,10 @@ am5.ready(function() {
         valueYField: "value",
         valueXField: "date",
         tooltip: myTooltip,
+        sequencedInterpolation: true,
         fill: am5.color(0xE9EBFA),
-        stroke: am5.color(0x2C3ACF),
+        stroke: am5.color(0x2C3ACF)
     }));
-
     series.fills.template.setAll({
         visible: true,
         fillOpacity: 0.7,
@@ -100,7 +99,9 @@ am5.ready(function() {
     function loadData(callbackFn) {
         let fromDate = moment();
         let toDate = moment();
-        xAxis.get("baseInterval").count = 1;
+        xRenderer.labels.template.setAll({
+            fontSize: "14px"
+        });
         switch ($('#reportFilter1').val()) {
             case "2":
                 {
@@ -118,21 +119,27 @@ am5.ready(function() {
                 {
                     fromDate = moment().subtract(29, 'days');
                     toDate = moment();
-                    xAxis.get("baseInterval").count = 4;
+                    xRenderer.labels.template.setAll({
+                        fontSize: "10px"
+                    });
                     break
                 }
             case "5":
                 {
                     fromDate = moment().startOf('month');
                     toDate = moment().endOf('month');
-                    xAxis.get("baseInterval").count = 4;
+                    xRenderer.labels.template.setAll({
+                        fontSize: "10px"
+                    });
                     break
                 }
             case "6":
                 {
                     fromDate = moment().subtract(1, 'month').startOf('month');
                     toDate = moment().subtract(1, 'month').endOf('month');
-                    xAxis.get("baseInterval").count = 4;
+                    xRenderer.labels.template.setAll({
+                        fontSize: "10px"
+                    });
                     break
                 }
         }
