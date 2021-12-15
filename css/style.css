@@ -2266,3 +2266,36 @@ footer ul li a:hover {
         padding: 20px;
     }
 }
+
+@media(max-width:1399px) {
+    .mb-why-item-title {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+@media(max-width:1023px) {
+    #worldChart {
+        min-height: 380px;
+    }
+    .mb-section-our-network {
+        padding-bottom: 100px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mb-why-item-title {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .mb-why-item-description {
+        font-size: 14px;
+        text-align: left;
+    }
+    .mb-build-item-custom .mb-build-item-description {
+        min-height: 4.5rem;
+    }
+    .mb-build-item-custom .mb-build-item-title {
+        font-size: 20px;
+    }
+}

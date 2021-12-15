@@ -70,7 +70,7 @@ am5.ready(function() {
             regionalSeries[poinType].markerData.push({
                 country_name: store.country_name,
                 total: store.value,
-                label: poinType == 'Gateway' ? store.value > 1 ? 'Gateways' : 'Gatewap' : store.value > 1 ? 'Nodes' : 'Node',
+                label: poinType == 'Gateway' ? store.value > 1 ? 'Gateways' : 'Gateway' : store.value > 1 ? 'Nodes' : 'Node',
                 geometry: {
                     type: "Point",
                     coordinates: [store.longitude, store.latitude]
