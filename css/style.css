@@ -995,12 +995,14 @@ header::before {
 }
 
 .mb-realtime-card-filter,
-.mb-realtime-card-filter select {
+.mb-realtime-card-filter select,
+.mb-realtime-card-filter input {
     font-size: 14px;
     line-height: 20px;
     color: #434C88;
 }
 
+.mb-realtime-card-filter input,
 .mb-realtime-card-filter select {
     border: 1px solid #E9EBFA;
     box-sizing: border-box;

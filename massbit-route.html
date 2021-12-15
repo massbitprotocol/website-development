@@ -189,14 +189,16 @@
                                 <div class="mb-realtime-card-header">
                                     <div class="mb-realtime-card-title">TOTAL REQUESTS</div>
                                     <div class="mb-realtime-card-filter">
-                                        <select class="form-select">
-                                            <option value="30">Last 30 days</option>
-                                            <option value="7">Last 7 days</option>
+                                        <select class="form-select" id="reportFilter1">
+                                            <option value="3">Last 7 Days</option>
+                                            <option value="4">Last 30 Days</option>
+                                            <option value="5">This Month</option>
+                                            <option value="6">Last Month</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="mb-realtime-card-value">
-                                    <b>11.42</b>
+                                    <b id="txtTotalRequests">0</b>
                                     <span>Requests</span>
                                 </div>
                                 <div class="mb-realtime-card-body">
@@ -209,14 +211,18 @@
                                 <div class="mb-realtime-card-header">
                                     <div class="mb-realtime-card-title">TOTAL BANDWIDTH</div>
                                     <div class="mb-realtime-card-filter">
-                                        <select class="form-select">
-                                            <option value="30">Last 30 days</option>
-                                            <option value="7">Last 7 days</option>
+                                        <select class="form-select" id="reportFilter2">
+                                            <option value="1">Today</option>
+                                            <option value="2">Yesterday</option>
+                                            <option value="3">Last 7 Days</option>
+                                            <option value="4">Last 30 Days</option>
+                                            <option value="5">This Month</option>
+                                            <option value="6">Last Month</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="mb-realtime-card-value">
-                                    <b>11.42</b>
+                                    <b id="txtTotalBandwidth">0</b>
                                     <span>TB</span>
                                 </div>
                                 <div class="mb-realtime-card-body">
@@ -230,8 +236,8 @@
                             <div class="mb-realtime-card-sm">
                                 <div class="mb-realtime-sm-label">Total Number of dAPIs</div>
                                 <div class="mb-realtime-sm-value">
-                                    <b>189,217,493</b>
-                                    <div class="up">
+                                    <b id="txtDapiValue">189,217,493</b>
+                                    <div id="txtDapiPercent" class="up">
                                         <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M15.5 0.833333C15.5079 0.775267 15.5079 0.7164 15.5 0.658333C15.4927 0.609407 15.4787 0.561728 15.4583 0.516667C15.4363 0.475939 15.4112 0.436939 15.3833 0.4C15.3516 0.347294 15.3123 0.299558 15.2667 0.258333L15.1667 0.2C15.1186 0.16413 15.0651 0.136012 15.0083 0.116667H14.8417C14.7909 0.0674958 14.7316 0.0279646 14.6667 0H10.5C10.279 0 10.067 0.0877975 9.91075 0.244078C9.75447 0.400358 9.66667 0.61232 9.66667 0.833333C9.66667 1.05435 9.75447 1.26631 9.91075 1.42259C10.067 1.57887 10.279 1.66667 10.5 1.66667H12.8583L9.525 5.59167L5.925 3.45C5.75449 3.34858 5.55338 3.31133 5.35786 3.34493C5.16233 3.37854 4.9852 3.4808 4.85834 3.63333L0.691669 8.63333C0.6215 8.71754 0.568634 8.81476 0.536097 8.91943C0.50356 9.0241 0.491991 9.13416 0.502055 9.24331C0.512118 9.35246 0.543615 9.45854 0.594742 9.5555C0.645868 9.65246 0.71562 9.73838 0.800002 9.80833C0.949929 9.93257 1.13863 10.0004 1.33334 10C1.45576 10.0002 1.57673 9.97342 1.68763 9.92157C1.79853 9.86972 1.89665 9.79407 1.975 9.7L5.68334 5.25L9.24167 7.38333C9.41045 7.48344 9.60913 7.52077 9.80274 7.48876C9.99634 7.45675 10.1724 7.35744 10.3 7.20833L13.8333 3.08333V5C13.8333 5.22101 13.9211 5.43297 14.0774 5.58925C14.2337 5.74554 14.4457 5.83333 14.6667 5.83333C14.8877 5.83333 15.0996 5.74554 15.2559 5.58925C15.4122 5.43297 15.5 5.22101 15.5 5V0.833333Z" fill="currentColor"/>
                                         </svg>
@@ -244,8 +250,8 @@
                             <div class="mb-realtime-card-sm">
                                 <div class="mb-realtime-sm-label">Total Number of Gateways</div>
                                 <div class="mb-realtime-sm-value">
-                                    <b>189,217,493</b>
-                                    <div class="up">
+                                    <b id="txtGatewayValue">189,217,493</b>
+                                    <div id="txtGatewayPercent" class="up">
                                         <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M15.5 0.833333C15.5079 0.775267 15.5079 0.7164 15.5 0.658333C15.4927 0.609407 15.4787 0.561728 15.4583 0.516667C15.4363 0.475939 15.4112 0.436939 15.3833 0.4C15.3516 0.347294 15.3123 0.299558 15.2667 0.258333L15.1667 0.2C15.1186 0.16413 15.0651 0.136012 15.0083 0.116667H14.8417C14.7909 0.0674958 14.7316 0.0279646 14.6667 0H10.5C10.279 0 10.067 0.0877975 9.91075 0.244078C9.75447 0.400358 9.66667 0.61232 9.66667 0.833333C9.66667 1.05435 9.75447 1.26631 9.91075 1.42259C10.067 1.57887 10.279 1.66667 10.5 1.66667H12.8583L9.525 5.59167L5.925 3.45C5.75449 3.34858 5.55338 3.31133 5.35786 3.34493C5.16233 3.37854 4.9852 3.4808 4.85834 3.63333L0.691669 8.63333C0.6215 8.71754 0.568634 8.81476 0.536097 8.91943C0.50356 9.0241 0.491991 9.13416 0.502055 9.24331C0.512118 9.35246 0.543615 9.45854 0.594742 9.5555C0.645868 9.65246 0.71562 9.73838 0.800002 9.80833C0.949929 9.93257 1.13863 10.0004 1.33334 10C1.45576 10.0002 1.57673 9.97342 1.68763 9.92157C1.79853 9.86972 1.89665 9.79407 1.975 9.7L5.68334 5.25L9.24167 7.38333C9.41045 7.48344 9.60913 7.52077 9.80274 7.48876C9.99634 7.45675 10.1724 7.35744 10.3 7.20833L13.8333 3.08333V5C13.8333 5.22101 13.9211 5.43297 14.0774 5.58925C14.2337 5.74554 14.4457 5.83333 14.6667 5.83333C14.8877 5.83333 15.0996 5.74554 15.2559 5.58925C15.4122 5.43297 15.5 5.22101 15.5 5V0.833333Z" fill="currentColor"/>
                                         </svg>
@@ -258,8 +264,8 @@
                             <div class="mb-realtime-card-sm">
                                 <div class="mb-realtime-sm-label">Total Number of Nodes</div>
                                 <div class="mb-realtime-sm-value">
-                                    <b>189,217,493</b>
-                                    <div class="up">
+                                    <b id="txtNodeValue">189,217,493</b>
+                                    <div id="txtNodePercent" class="up">
                                         <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M15.5 0.833333C15.5079 0.775267 15.5079 0.7164 15.5 0.658333C15.4927 0.609407 15.4787 0.561728 15.4583 0.516667C15.4363 0.475939 15.4112 0.436939 15.3833 0.4C15.3516 0.347294 15.3123 0.299558 15.2667 0.258333L15.1667 0.2C15.1186 0.16413 15.0651 0.136012 15.0083 0.116667H14.8417C14.7909 0.0674958 14.7316 0.0279646 14.6667 0H10.5C10.279 0 10.067 0.0877975 9.91075 0.244078C9.75447 0.400358 9.66667 0.61232 9.66667 0.833333C9.66667 1.05435 9.75447 1.26631 9.91075 1.42259C10.067 1.57887 10.279 1.66667 10.5 1.66667H12.8583L9.525 5.59167L5.925 3.45C5.75449 3.34858 5.55338 3.31133 5.35786 3.34493C5.16233 3.37854 4.9852 3.4808 4.85834 3.63333L0.691669 8.63333C0.6215 8.71754 0.568634 8.81476 0.536097 8.91943C0.50356 9.0241 0.491991 9.13416 0.502055 9.24331C0.512118 9.35246 0.543615 9.45854 0.594742 9.5555C0.645868 9.65246 0.71562 9.73838 0.800002 9.80833C0.949929 9.93257 1.13863 10.0004 1.33334 10C1.45576 10.0002 1.57673 9.97342 1.68763 9.92157C1.79853 9.86972 1.89665 9.79407 1.975 9.7L5.68334 5.25L9.24167 7.38333C9.41045 7.48344 9.60913 7.52077 9.80274 7.48876C9.99634 7.45675 10.1724 7.35744 10.3 7.20833L13.8333 3.08333V5C13.8333 5.22101 13.9211 5.43297 14.0774 5.58925C14.2337 5.74554 14.4457 5.83333 14.6667 5.83333C14.8877 5.83333 15.0996 5.74554 15.2559 5.58925C15.4122 5.43297 15.5 5.22101 15.5 5V0.833333Z" fill="currentColor"/>
                                         </svg>
@@ -282,7 +288,7 @@
                 <div class="mb-section-body">
                     <div data-aos="fade-up" class="row justify-content-center mb-30 mb-mb-10px">
                         <div class="col-xl-8 text-md-center">
-                            Massbit Route is available all around the world, with new communities being established at a // break-neck pace / a high rate / daily/weekly.monthly /all the time // often
+                            MassBit Route is available all around the world, with new communities being established at a // break-neck pace / a high rate / daily/weekly.monthly /all the time // often
                         </div>
                     </div>
                     <div class="mb-realtime-card-lg">
@@ -599,10 +605,45 @@
     <script src="plugins/amcharts_5_0_15/amcharts5/geodata/continentsLow.js"></script>
     <script src="plugins/amcharts_5_0_15/amcharts5/geodata/usaLow.js"></script>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
     <script src="js/script.js?v=12"></script>
     <script src="js/total-bandwidth-chart.js"></script>
     <script src="js/total-requests-chart.js"></script>
     <script src="js/world-chart.js"></script>
+    <script>
+        loadData();
+        setInterval(() => {
+            loadData()
+        }, 5000)
+
+        function loadData() {
+            $.ajax({
+                url: "https://dapi.massbit.io/api/v1?action=stat.overview",
+                type: 'GET',
+                dataType: 'json',
+                success: function(res) {
+                    if (res && res.result) {
+                        $('#txtDapiValue').text(numberWithCommas(res.data.dapi.value));
+                        $('#txtDapiPercent').attr('class', res.data.dapi.percent > 0 ? 'up' : 'down');
+                        $('#txtDapiPercent span').text(numberWithCommas(res.data.dapi.percent) + '%');
+
+                        $('#txtGatewayValue').text(numberWithCommas(res.data.gateway.value));
+                        $('#txtGatewayPercent').attr('class', res.data.gateway.percent > 0 ? 'up' : 'down');
+                        $('#txtGatewayPercent span').text(numberWithCommas(res.data.gateway.percent) + '%');
+
+                        $('#txtNodeValue').text(numberWithCommas(res.data.node.value));
+                        $('#txtNodePercent').attr('class', res.data.node.percent > 0 ? 'up' : 'down');
+                        $('#txtNodePercent span').text(numberWithCommas(res.data.node.percent) + '%');
+                    }
+                }
+            });
+        }
+
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+    </script>
 </body>
 
 </html>

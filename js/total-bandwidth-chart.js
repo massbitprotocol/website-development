@@ -44,11 +44,6 @@ am5.ready(function() {
         maxDeviation: 0.3,
         renderer: am5xy.AxisRendererY.new(root, {})
     }));
-    var yRenderer = yAxis.get("renderer");
-    yRenderer.labels.template.setAll({
-        fill: am5.color(0xFF0000),
-        fontSize: "0"
-    });
 
     var myTooltip = am5.Tooltip.new(root, {
         autoTextColor: false,
@@ -69,47 +64,96 @@ am5.ready(function() {
         sequencedInterpolation: true,
         categoryXField: "date",
         seriesTooltipTarget: "bullet",
-        tooltip: myTooltip
+        tooltip: myTooltip,
     }));
     series.columns.template.setAll({
         cornerRadiusTL: 5,
-        cornerRadiusTR: 5
+        cornerRadiusTR: 5,
+        width: 50
     });
     series.columns.template.adapters.add("fill", (fill, target) => {
         return '#2C3ACF';
     });
 
+    // Set data from API
+    $('#reportFilter2').val(4);
+    loadData((res) => {
+        setData(res)
+    })
 
-    // Set data
-    var data = [{
-        date: "Nov 22",
-        value: 111
-    }, {
-        date: "Nov 26",
-        value: 196
-    }, {
-        date: "Nov 30",
-        value: 222
-    }, {
-        date: "Dec 06",
-        value: 280
-    }, {
-        date: "Dec 10",
-        value: 256
-    }, {
-        date: "Dec 14",
-        value: 309
-    }, {
-        date: "Dec 18",
-        value: 280
-    }, {
-        date: "Dec 22",
-        value: 247
-    }];
-    xAxis.data.setAll(data);
-    series.data.setAll(data);
-    // Make stuff animate on load
-    // https://www.amcharts.com/docs/v5/concepts/animations/
-    series.appear(1000);
-    chart.appear(1000, 100);
+    $('#reportFilter2').on('change', () => {
+        loadData((res) => {
+            setData(res);
+        })
+    })
+
+    function loadData(callbackFn) {
+        let fromDate = moment();
+        let toDate = moment();
+        switch ($('#reportFilter2').val()) {
+            case 2:
+                {
+                    fromDate = moment().subtract(1, 'days');
+                    toDate = moment().subtract(1, 'days');
+                    break
+                }
+            case 3:
+                {
+                    fromDate = moment().subtract(6, 'days');
+                    toDate = moment();
+                    break
+                }
+            case 4:
+                {
+                    fromDate = moment().subtract(29, 'days');
+                    toDate = moment();
+                    break
+                }
+            case 5:
+                {
+                    fromDate = moment().startOf('month');
+                    toDate = moment().endOf('month');
+                    break
+                }
+            case 6:
+                {
+                    fromDate = moment().subtract(1, 'month').startOf('month');
+                    toDate = moment().subtract(1, 'month').endOf('month');
+                    break
+                }
+        }
+        $.ajax({
+            url: "https://dapi.massbit.io/api/v1?action=stat.dapi&fromDate=" + fromDate.format('YYYY-MM-DD') + "&toDate=" + toDate.format('YYYY-MM-DD'),
+            type: 'GET',
+            dataType: 'json',
+            success: function(res) {
+                if (res && res.result) {
+                    callbackFn(res.data);
+                }
+            }
+        });
+    }
+
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function setData(resX) {
+        // Binding value
+        $('#txtTotalBandwidth').text(numberWithCommas(resX.bandwidth.total));
+
+        // Generate chart
+        var data = resX.bandwidth.data.map((e, i) => {
+            return {
+                date: moment(e.date).format("MMM DD"),
+                value: e.value
+            }
+        });
+        xAxis.data.setAll(data);
+        series.data.setAll(data);
+        // Make stuff animate on load
+        // https://www.amcharts.com/docs/v5/concepts/animations/
+        series.appear(1000);
+        chart.appear(1000, 100);
+    }
 }); // end am5.ready()

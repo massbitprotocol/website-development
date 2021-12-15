@@ -26,29 +26,6 @@ am5.ready(function() {
     }));
     cursor.lineY.set("visible", false);
 
-
-    // Generate random data
-    var date = new Date();
-    date.setHours(0, 0, 0, 0);
-    var value = 100;
-
-    function generateData() {
-        value = Math.round((Math.random() * 10 - 5) + value);
-        am5.time.add(date, "day", 1);
-        return {
-            date: date.getTime(),
-            value: value
-        };
-    }
-
-    function generateDatas(count) {
-        var data = [];
-        for (var i = 0; i < count; ++i) {
-            data.push(generateData());
-        }
-        return data;
-    }
-
     var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
     xRenderer.labels.template.setAll({
         fontSize: "14px",
@@ -60,7 +37,7 @@ am5.ready(function() {
         maxDeviation: 0,
         baseInterval: {
             timeUnit: "day",
-            count: 2
+            count: 1
         },
         renderer: xRenderer,
         tooltip: am5.Tooltip.new(root, {})
@@ -105,12 +82,85 @@ am5.ready(function() {
         strokeWidth: 3,
     });
 
+    // Set data from API
+    $('#reportFilter1').val(4);
+    loadData((res) => {
+        setData(res)
+    })
 
-    var data = generateDatas(16);
-    series.data.setAll(data);
+    $('#reportFilter1').on('change', () => {
+        loadData((res) => {
+            setData(res);
+        })
+    })
 
-    // Make stuff animate on load
-    // https://www.amcharts.com/docs/v5/concepts/animations/
-    series.appear(1000);
-    chart.appear(1000, 100);
+    function loadData(callbackFn) {
+        let fromDate = moment();
+        let toDate = moment();
+        switch ($('#reportFilter1').val()) {
+            case 2:
+                {
+                    fromDate = moment().subtract(1, 'days');
+                    toDate = moment().subtract(1, 'days');
+                    break
+                }
+            case 3:
+                {
+                    fromDate = moment().subtract(6, 'days');
+                    toDate = moment();
+                    break
+                }
+            case 4:
+                {
+                    fromDate = moment().subtract(29, 'days');
+                    toDate = moment();
+                    break
+                }
+            case 5:
+                {
+                    fromDate = moment().startOf('month');
+                    toDate = moment().endOf('month');
+                    break
+                }
+            case 6:
+                {
+                    fromDate = moment().subtract(1, 'month').startOf('month');
+                    toDate = moment().subtract(1, 'month').endOf('month');
+                    break
+                }
+        }
+        $.ajax({
+            url: "https://dapi.massbit.io/api/v1?action=stat.dapi&fromDate=" + fromDate.format('YYYY-MM-DD') + "&toDate=" + toDate.format('YYYY-MM-DD'),
+            type: 'GET',
+            dataType: 'json',
+            success: function(res) {
+                if (res && res.result) {
+                    callbackFn(res.data);
+                }
+            }
+        });
+    }
+
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function setData(resX) {
+        // Binding value
+        $('#txtTotalRequests').text(numberWithCommas(resX.requests.total));
+
+        // Generate chart
+        var data = resX.requests.data.map((e, i) => {
+            return {
+                date: new Date(e.date).getTime(),
+                value: e.value
+            }
+        });
+        series.data.setAll(data);
+
+        // Make stuff animate on load
+        // https://www.amcharts.com/docs/v5/concepts/animations/
+        series.appear(1000);
+        chart.appear(1000, 100);
+    }
 }); // end am5.ready()
