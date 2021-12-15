@@ -2245,3 +2245,24 @@ footer ul li a:hover {
 .mb-cci-section-realtime .mb-realtime-card {
     padding: 24px;
 }
+
+@media(max-width:991px) {
+    .mb-build-item-custom .mb-build-item-title {
+        font-size: 24px;
+    }
+}
+
+@media(max-width:767px) {
+    #totalRequestsChart,
+    #totalBandwidthChart {
+        height: 250px !important;
+    }
+    .mb-section-realtime-data {
+        padding-bottom: 0;
+    }
+    .mb-realtime-card,
+    .mb-realtime-card-sm,
+    .mb-realtime-card-lg {
+        padding: 20px;
+    }
+}
