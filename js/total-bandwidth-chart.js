@@ -35,14 +35,12 @@ am5.ready(function() {
         paddingTop: 15,
         oversizedBehavior: 'fit'
     });
-
     var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
         maxDeviation: 0.3,
         categoryField: "date",
         renderer: xRenderer,
         tooltip: am5.Tooltip.new(root, {})
     }));
-
     var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
         maxDeviation: 0.3,
         renderer: am5xy.AxisRendererY.new(root, {})

@@ -3,7 +3,9 @@ am5.ready(function() {
     // Create root element
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
     var root = am5.Root.new("totalRequestsChart");
-
+    // root.numberFormatter.setAll({
+    //     numberFormat: "#a"
+    // })
 
     // Set themes
     // https://www.amcharts.com/docs/v5/concepts/themes/
@@ -30,7 +32,7 @@ am5.ready(function() {
         fontSize: "14px",
         fill: am5.color(0x717591),
         paddingTop: 15,
-        minGridDistance: 0
+        minGridDistance: 30
     });
     // Create axes
     // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
@@ -41,13 +43,16 @@ am5.ready(function() {
             count: 1
         },
         renderer: xRenderer,
+        startLocation: 0.4,
+        endLocation: 0.6,
         tooltip: am5.Tooltip.new(root, {})
     }));
 
     var yRenderer = am5xy.AxisRendererY.new(root, {});
     yRenderer.labels.template.setAll({
         fontSize: "14px",
-        fill: am5.color(0x717591)
+        fill: am5.color(0x717591),
+        numberFormat: "#a"
     });
     var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
         renderer: yRenderer,
@@ -85,12 +90,12 @@ am5.ready(function() {
     });
 
     // Set data from API
-    $('#reportFilter1').val(3);
+    jQuery('#reportFilter1').val(3);
     loadData((res) => {
         setData(res)
     })
 
-    $('#reportFilter1').on('change', () => {
+    jQuery('#reportFilter1').on('change', () => {
         loadData((res) => {
             setData(res);
         })
@@ -102,7 +107,7 @@ am5.ready(function() {
         xRenderer.labels.template.setAll({
             fontSize: "14px"
         });
-        switch ($('#reportFilter1').val()) {
+        switch (jQuery('#reportFilter1').val()) {
             case "2":
                 {
                     fromDate = moment().subtract(1, 'days');
@@ -143,8 +148,8 @@ am5.ready(function() {
                     break
                 }
         }
-        $('#txtDateRange').text(`${fromDate.format("MMM DD")} - ${toDate.format("MMM DD")}`);
-        $.ajax({
+        jQuery('#txtDateRange').text(`${fromDate.format("MMM DD")} - ${toDate.format("MMM DD")}`);
+        jQuery.ajax({
             url: "https://dapi.massbit.io/api/v1?action=stat.dapi&fromDate=" + fromDate.format('YYYY-MM-DD') + "&toDate=" + toDate.format('YYYY-MM-DD'),
             type: 'GET',
             dataType: 'json',
@@ -162,7 +167,7 @@ am5.ready(function() {
 
     function setData(resX) {
         // Binding value
-        $('#txtTotalRequests').text(numberWithCommas(resX.requests.total));
+        jQuery('#txtTotalRequests').text(numberWithCommas(resX.requests.total));
 
         // Generate chart
         var data = resX.requests.data.map((e, i) => {
