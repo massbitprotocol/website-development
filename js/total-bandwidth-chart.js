@@ -134,6 +134,7 @@ am5.ready(function() {
                     break
                 }
         }
+        $('#txtDateRange2').text(`${fromDate.format("MMM DD")} - ${toDate.format("MMM DD")}`);
         $.ajax({
             url: "https://dapi.massbit.io/api/v1?action=stat.dapi&fromDate=" + fromDate.format('YYYY-MM-DD') + "&toDate=" + toDate.format('YYYY-MM-DD'),
             type: 'GET',

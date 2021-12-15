@@ -990,7 +990,7 @@ header::before {
     display: flex;
     gap: 10px;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 12px;
 }
 
