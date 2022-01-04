@@ -59,10 +59,19 @@ $(document).ready(function() {
         }, 500);
     })
 
-    $('.mb-right-box-close').click(function(e) {
+    $('#MBRightBoxClose').click(function(e) {
         e.preventDefault();
         $('.mb-right-box-wrap').fadeOut(300);
         $('.mb-right-box-wrap').removeClass('show');
+        $('#MBRightBoxOpen').show();
+        $('#MBRightBoxClose').hide();
+    })
+    $('#MBRightBoxOpen').click(function(e) {
+        e.preventDefault();
+        $('.mb-right-box-wrap').fadeIn(300);
+        $('.mb-right-box-wrap').addClass('show');
+        $('#MBRightBoxClose').show();
+        $('#MBRightBoxOpen').hide();
     })
 
     window.setTimeout(() => {
