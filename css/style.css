@@ -1213,6 +1213,11 @@ header::before {
 
 .mb-discover-item-style-2::before {
     background-image: url(../images/discover-decor-2.svg);
+    opacity: .1;
+}
+
+.mb-discover-item-style-2 {
+    background-color: #1A2277 !important;
 }
 
 .mb-discover-item-inner {
