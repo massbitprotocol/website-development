@@ -1213,7 +1213,7 @@ header::before {
 
 .mb-discover-item-style-2::before {
     background-image: url(../images/discover-decor-2.svg);
-    opacity: .1;
+    opacity: .12;
 }
 
 .mb-discover-item-style-2 {
