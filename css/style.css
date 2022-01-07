@@ -859,7 +859,7 @@ header::before {
 }
 
 .img-tab-preview {
-    height: 180px;
+    /* height: 180px; */
     transition: all ease-in-out .3s;
     background-size: contain;
     background-repeat: no-repeat;
@@ -868,7 +868,7 @@ header::before {
 
 @media (min-width: 767px) {
     .img-tab-preview {
-        height: 380px;
+        /* height: 380px; */
     }
     .mb-build-item-description {
         line-height: 1.5;
@@ -2330,7 +2330,7 @@ footer ul li a:hover {
 }
 
 .cross-chain-page .mb-section-start-with-massbit:not(.mb-section-discover-cci-massbit) {
-    background-image: url(../images/Subtract-none.png);
+    /* background-image: url(../images/Subtract-none.png); */
     background-size: 100% 100%;
     background-color: transparent;
     background-position: bottom left;
@@ -2347,10 +2347,11 @@ footer ul li a:hover {
 .cross-chain-page .mb-section-start-with-massbit:not(.mb-section-discover-cci-massbit)::before {
     top: 0;
     background: #f1f6ff;
+    display: none;
 }
 
 .cross-chain-page header::before {
-    background: #f1f6ff;
+    background: #fff;
 }
 
 .mb-cci-section-realtime .mb-realtime-card-sm {
@@ -2694,5 +2695,31 @@ body.testnet .mb-right-box-socials a:not(:last-child) {
     }
     body.testnet .mb-right-box-more {
         margin-top: 15px;
+    }
+}
+
+.mb-cci-section h3 {
+    font-family: 'Airbnb Cereal App Medium';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: #050C72;
+    margin-bottom: 32px;
+}
+
+.mb-cci-section p {
+    font-family: 'Airbnb Cereal App Book';
+    font-size: 16px;
+    line-height: 22px;
+    color: #434C88;
+}
+
+.mb-cci-section p:last-child {
+    margin-bottom: 0;
+}
+
+@media(max-width:767px) {
+    .mb-cci-section {
+        text-align: center;
     }
 }
