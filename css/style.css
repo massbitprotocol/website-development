@@ -2772,6 +2772,23 @@ body.testnet .mb-banner-testnet-inner {
     align-items: center;
     justify-content: space-between;
     transition: all ease-in-out .3s;
+    position: relative;
+}
+
+body.testnet .mb-banner-testnet-inner .btn-closex {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    color: #fff;
+    border: 0;
+    background-color: transparent;
+    opacity: 0.5;
+    font-size: 16px;
+    transition: all ease .3s;
+}
+
+body.testnet .mb-banner-testnet-inner .btn-closex:hover {
+    opacity: 1;
 }
 
 body.testnet .mb-banner-testnet-inner div {
@@ -2829,6 +2846,8 @@ body.testnet .mb-navbar-fixed .mb-banner-testnet .container {
     padding-right: 0 !important;
 }
 
+
+/* 
 body.testnet .mb-right-box {
     max-width: 444px;
     text-align: left;
@@ -2918,7 +2937,7 @@ body.testnet .mb-right-box-socials a:hover svg {
 
 body.testnet .mb-right-box-socials a:not(:last-child) {
     margin-right: 10px;
-}
+} */
 
 #MBRightBoxOpen {
     position: fixed;
@@ -2964,7 +2983,7 @@ body.testnet .mb-right-box-socials a:not(:last-child) {
         text-align: center;
         background-position: bottom 0 left -91px, bottom 0 right -33px;
     }
-    body.testnet .mb-right-box {
+    /* body.testnet .mb-right-box {
         max-width: 315px;
     }
     body.testnet .mb-right-box-heading {
@@ -2978,7 +2997,7 @@ body.testnet .mb-right-box-socials a:not(:last-child) {
     }
     body.testnet .mb-right-box-more {
         margin-top: 15px;
-    }
+    } */
 }
 
 .mb-cci-section h3 {

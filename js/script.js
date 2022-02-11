@@ -110,4 +110,10 @@ function setSlide() {
             $('#slideMobile').removeClass('owl-carousel');
         }
     }
+
+}
+
+function hideBanner() {
+    $('body').removeClass('testnet');
+    $('.mb-banner-testnet').hide(300);
 }
