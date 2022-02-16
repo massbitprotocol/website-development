@@ -3025,3 +3025,195 @@ body.testnet .mb-right-box-socials a:not(:last-child) {
         text-align: center;
     }
 }
+
+
+/* Partnership */
+
+.partnership .navbar-light:not(.mb-navbar-fixed) .navbar-toggler {
+    color: rgba(255, 255, 255, .55);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+.partnership .navbar-light:not(.mb-navbar-fixed) .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.partnership .mb-navbar:not(.mb-navbar-fixed) .logo-default {
+    display: none;
+}
+
+.partnership .mb-navbar:not(.mb-navbar-fixed) .logo-white {
+    display: block;
+}
+
+.partnership .mb-navbar {
+    background-color: transparent !important;
+}
+
+.partnership .mb-navbar.mb-navbar-fixed {
+    background-color: #fff !important;
+}
+
+.partnership .mb-header-small {
+    background-image: url(../images/header-bg2.png);
+    margin-top: -138px;
+    padding-top: calc(138px + 3rem);
+}
+
+.partnership .mb-navbar:not(.mb-navbar-fixed) .nav-link {
+    color: #fff;
+}
+
+.partnership .mb-navbar:not(.mb-navbar-fixed) .btn-get-started {
+    border-color: #fff !important;
+}
+
+.mb-partnership {
+    margin-top: -178px;
+    position: relative;
+}
+
+.mb-partnership::before {
+    top: -150px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    content: '';
+    background-color: #FAA001;
+}
+
+.mb-banner-partnership {
+    padding-top: 178px;
+    position: relative;
+    text-align: right;
+}
+
+.mb-banner-partnership .mb-banner-partnership-decor {
+    width: 925px;
+    margin-top: -220px;
+}
+
+.mb-banner-partnership-icon {
+    position: absolute;
+    bottom: -220px;
+    left: 0;
+    display: flex;
+    text-align: left;
+}
+
+.mb-banner-partnership .mb-banner-partnership-content {
+    position: absolute;
+    top: 160px;
+    text-align: left;
+    font-family: 'Airbnb Cereal App Book';
+    font-size: 30px;
+    line-height: 1.5;
+    color: #fff;
+    padding: 80px 0 80px 80px;
+}
+
+.mb-banner-partnership .mb-banner-partnership-content h1 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.mb-join-partnership {
+    padding: 0 !important;
+}
+
+.mb-join-partnership-body {
+    margin-bottom: 30px;
+}
+
+.mb-join-partnership-action {
+    padding-bottom: 50px;
+}
+
+@media(max-width:1399px) {
+    .mb-partnership::before {
+        top: -80px;
+    }
+    .mb-banner-partnership .mb-banner-partnership-decor {
+        width: 750px;
+    }
+    .mb-banner-partnership .mb-banner-partnership-content {
+        padding-left: 0;
+    }
+    .mb-banner-partnership-icon {
+        bottom: -100px;
+    }
+    .mb-banner-partnership-icon img {
+        height: 120px;
+    }
+}
+
+@media(max-width:1199px) {
+    .mb-banner-partnership .mb-banner-partnership-decor {
+        margin-right: -50px;
+    }
+}
+
+@media(max-width:1023px) {
+    .mb-partnership {
+        overflow-x: hidden;
+    }
+    .mb-banner-partnership .mb-banner-partnership-decor {
+        margin-right: -20vw;
+    }
+}
+
+@media(max-width:991px) {
+    .mb-banner-partnership .mb-banner-partnership-decor {
+        margin-right: -40vw;
+    }
+    .mb-banner-partnership .mb-banner-partnership-content h1 {
+        font-size: 60px;
+    }
+    .mb-partnership::before {
+        top: -100px;
+    }
+    .cross-chain-page .navbar:not(.mb-navbar-fixed) .navbar-collapse,
+    .partnership .navbar:not(.mb-navbar-fixed) .navbar-collapse {
+        background-color: #2c3acf;
+        padding: 30px 0;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .mb-partnership {
+        min-height: 500px;
+    }
+    .mb-banner-partnership .mb-banner-partnership-decor {
+        margin-right: -80vw;
+        margin-top: -120px;
+        width: 500px;
+    }
+    .mb-partnership::before {
+        top: -80px;
+    }
+    .mb-join-partnership-action {
+        padding-bottom: 0;
+    }
+    .mb-banner-partnership .mb-banner-partnership-content {
+        font-size: 18px;
+    }
+    .mb-banner-partnership .mb-banner-partnership-content h1 {
+        font-size: 50px;
+    }
+    .mb-card-cta {
+        padding: 30px 20px;
+    }
+    .mb-card-cta h3 {
+        font-size: 20px;
+    }
+    .mb-card-cta p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+}
