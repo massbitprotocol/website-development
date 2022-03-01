@@ -2033,6 +2033,12 @@ footer ul li a:hover {
     animation-fill-mode: forwards;
 }
 
+.u-floatX2 {
+    animation: floatX2 infinite 5s ease-in-out;
+    -webkit-animation: floatX2 infinite 5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
 @keyframes spin-2 {
     0% {
         transform: rotate(-170deg);
@@ -2078,6 +2084,30 @@ footer ul li a:hover {
         -moz-transform: translateX(-2rem);
         -ms-transform: translateX(-2rem);
         -o-transform: translateX(-2rem);
+    }
+}
+
+@keyframes floatX2 {
+    0% {
+        transform: translateX(-30%);
+        -webkit-transform: translateX(-30%);
+        -moz-transform: translateX(-30%);
+        -ms-transform: translateX(-30%);
+        -o-transform: translateX(-30%);
+    }
+    50% {
+        transform: translateX(180%);
+        -webkit-transform: translateX(180%);
+        -moz-transform: translateX(180%);
+        -ms-transform: translateX(180%);
+        -o-transform: translateX(180%);
+    }
+    100% {
+        transform: translateX(-30%);
+        -webkit-transform: translateX(-30%);
+        -moz-transform: translateX(-30%);
+        -ms-transform: translateX(-30%);
+        -o-transform: translateX(-30%);
     }
 }
 
@@ -2288,6 +2318,9 @@ footer ul li a:hover {
 }
 
 @media(max-width:767px) {
+    .mb-banner-partnership::before {
+        display: none;
+    }
     #WhyCrossChainIndexing {
         padding-top: 0 !important;
         margin-top: -70px;
@@ -3081,7 +3114,7 @@ body.testnet .mb-right-box-socials a:not(:last-child) {
     z-index: -1;
     position: absolute;
     content: '';
-    background-color: #FAA001;
+    background-color: #050C72;
 }
 
 .mb-banner-partnership {
@@ -3093,14 +3126,35 @@ body.testnet .mb-right-box-socials a:not(:last-child) {
 .mb-banner-partnership .mb-banner-partnership-decor {
     width: 925px;
     margin-top: -220px;
+    visibility: hidden;
+}
+
+.mb-banner-partnership {
+    position: relative;
+}
+
+.mb-banner-partnership::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -40px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/GIF/banner.gif);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 1000px auto;
+    opacity: .08;
 }
 
 .mb-banner-partnership-icon {
     position: absolute;
-    bottom: -220px;
+    bottom: -200px;
     left: 0;
     display: flex;
     text-align: left;
+    width: 500px;
+    max-width: 100%;
 }
 
 .mb-banner-partnership .mb-banner-partnership-content {
@@ -3111,7 +3165,7 @@ body.testnet .mb-right-box-socials a:not(:last-child) {
     font-size: 30px;
     line-height: 1.5;
     color: #fff;
-    padding: 80px 0 80px 80px;
+    padding: 80px 0;
 }
 
 .mb-banner-partnership .mb-banner-partnership-content h1 {
@@ -3126,12 +3180,73 @@ body.testnet .mb-right-box-socials a:not(:last-child) {
     padding: 0 !important;
 }
 
+.mb-join-partnetship-card {
+    box-shadow: 0px 0px 1px rgb(30 38 49 / 15%), 0px 2px 10px rgb(70 75 82 / 10%);
+    border-radius: 8px;
+    padding: 40px;
+    background-color: #434C88;
+    position: relative;
+    overflow: hidden;
+}
+
+.mb-join-partnetship-card::before,
+.mb-join-partnetship-card::after {
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.mb-join-partnetship-card::after {
+    background-image: url(../images/discover-decor-1.svg);
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    bottom: 0;
+    right: 0;
+}
+
+.mb-join-partnetship-card::before {
+    top: 20px;
+    left: -40px;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    background: rgba(159, 190, 255, 0.23);
+    border-radius: 50%;
+    background-image: url(../images/decor-logo.svg);
+    background-size: 75%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: .2;
+}
+
+.mb-join-partnership-title {
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
 .mb-join-partnership-body {
     margin-bottom: 30px;
+    color: rgba(255, 255, 255, .7);
+    position: relative;
+    z-index: 2;
 }
 
 .mb-join-partnership-action {
-    padding-bottom: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.mb-join-partnership-action .btn {
+    padding: 13px 50px 13px 20px;
+    border-radius: 8px;
+}
+
+.mb-join-partnership-action .btn:hover::before {
+    filter: invert(1);
 }
 
 @media(max-width:1399px) {
