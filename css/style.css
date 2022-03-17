@@ -3191,6 +3191,21 @@ body.testnet .mb-right-box-socials a:not(:last-child) {
         padding: 30px 0;
         margin-top: 15px;
     }
+    .mb-partnership {
+        padding-bottom: 150px;
+        padding-top: 80px;
+    }
+    .mb-partnership .mb-banner-partnership h1 {
+        font-size: 45px;
+        line-height: 1.2;
+    }
+    .mb-the-massbit-blog {
+        padding-top: 0;
+        padding-bottom: 80px;
+    }
+    .mb-blog-item-image img {
+        width: 100%;
+    }
 }
 
 @media(max-width:767px) {
