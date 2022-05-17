@@ -125,4 +125,8 @@ if (noticeModalEl) {
             noticeModal.show();
         }, 2000)
     };
+    noticeModalEl.addEventListener('hidden.bs.modal', function (event) {
+        $('body').addClass('testnet');
+        $('.mb-banner-testnet').fadeIn(300);
+    })
 }
