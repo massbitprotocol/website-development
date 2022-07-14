@@ -142,15 +142,15 @@ body {
 }
 .btn-success {
   padding: 13px 20px;
-  background: #00B159;
+  background: #00b159;
   border-radius: 8px;
-  border: 1px solid #00B159;
+  border: 1px solid #00b159;
 }
 
 .btn-success:hover {
   background: #03ce69;
   border-color: #03ce69;
-  box-shadow: 0 10px 20px -10px rgba(0,177,89,.4) !important;
+  box-shadow: 0 10px 20px -10px rgba(0, 177, 89, 0.4) !important;
 }
 
 .btn-fw {
@@ -391,8 +391,15 @@ body {
   color: #27319b;
   transition: all ease-in-out 0.3s;
   background-color: transparent;
+  line-height: 20px;
 }
 
+.mb-header-dropdown-menu li .dropdown-item small{
+  display: block;
+  font-size: 8px;
+  line-height: 18px;
+  font-weight: 400;
+}
 .mb-header-dropdown-menu li a.dropdown-item.active,
 .mb-header-dropdown-menu li a.dropdown-item:hover {
   background-color: #f1f6ff;
@@ -721,7 +728,80 @@ header::before {
   content: "";
   background: #343b76;
 }
-
+/* Community Loves MassBit */
+.mb-section-community-loves-massbit .mb-section-title {
+  margin-bottom: 107px;
+}
+.mb-community-card {
+  margin-bottom: 50px;
+  background: #ffffff;
+  box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  padding: 32px;
+}
+.mb-community-card-header {
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mb-community-card-info {
+  display: flex;
+}
+.mb-community-card-avatar {
+  width: 51px;
+  height: 51px;
+  min-width: 51px;
+  margin-right: 11px;
+}
+.mb-community-card-name {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  color: #35353a;
+  margin-bottom: 5px;
+}
+.mb-community-card-username {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  color: #8e8f94;
+}
+.mb-community-card-body {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #35353a;
+  margin-bottom: 14px;
+}
+.mb-community-card-body a {
+  color: #35353a;
+}
+.mb-community-card-footer {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #8e8f94;
+}
+@media (max-width: 991px) {
+  #slideCommunityMobile .owl-stage-outer {
+    padding-top: 50px;
+  }
+  #slideCommunityMobile .mb-community-card {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .mb-section-community-loves-massbit .mb-section-title {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .mb-section-community-loves-massbit .mb-section-title {
+    margin-bottom: 0px;
+  }
+}
 /* Our Team Experience */
 
 .mb-team-experience-slide-item img {
@@ -868,7 +948,57 @@ header::before {
   line-height: 22px;
   color: #717591;
 }
+.mb-build-item-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+.mb-build-item-card-icon {
+  margin-bottom: 20px;
+}
+.mb-build-item-card-icon svg,
+.mb-build-item-card-icon img {
+  width: 52px;
+  height: 52px;
+}
+.mb-build-item-card-title {
+  font-family: "Airbnb Cereal App Medium";
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  color: #050c72;
+  margin-bottom: 20px;
+}
+.mb-build-item-card-body {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #717591;
+  margin-bottom: 20px;
+}
+.mb-build-item-card-action .btn {
+  background-color: #e9ebfa !important;
+  border: 1px solid #27319b !important;
+  border-radius: 8px;
+  height: 52px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #27319b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.mb-build-item-card-action .btn:hover {
+  background-color: #27319b !important;
+  border-color: #27319b !important;
+  color: #fff;
+}
 .img-tab-preview {
   /* height: 180px; */
   transition: all ease-in-out 0.3s;
@@ -1859,6 +1989,12 @@ footer ul li a {
   transition: all ease-in-out 0.3s;
   font-family: "Airbnb Cereal App Book";
 }
+footer ul li a small{
+  font-size: 8px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
 
 footer ul li a:hover {
   padding-left: 8px;
@@ -2795,7 +2931,7 @@ body.testnet .mb-banner-testnet-inner {
   font-weight: 500;
   font-size: 18px;
   line-height: 23px;
-  color: #f1f6ff;
+  color: #F1F6FF;
   background-image: url(/images/banner-testnet-bg.svg),
     url(/images/banner-testnet-bg2.svg);
   background-repeat: no-repeat, no-repeat;
@@ -2828,11 +2964,14 @@ body.testnet .mb-banner-testnet-inner .btn-closex:hover {
 
 body.testnet .mb-banner-testnet-inner div {
   padding: 5px 0;
+  font-weight: 500;
+  font-family: "Airbnb Cereal App Medium";
 }
 
 body.testnet .mb-banner-testnet-inner div span {
   font-family: "Airbnb Cereal App Medium";
-  font-weight: 500;
+  font-weight: 700;
+  color: #faa001;
 }
 
 body.testnet .mb-banner-testnet-inner div b {
