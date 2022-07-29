@@ -110,25 +110,6 @@ function setSlide() {
             $('#slideMobile').removeClass('owl-carousel');
         }
     }
-
-
-    if ($(window).width() < 768) {
-        $('#slideCommunityMobile').addClass('owl-carousel');
-        $("#slideCommunityMobile").owlCarousel({
-            loop: true,
-            // autoplay: true,
-            dots: true,
-            center: true,
-            items: 1,
-            autoplayTimeout: 3000
-        });
-    } else {
-        if (typeof $('#slideCommunityMobile').data('owl.carousel') != 'undefined') {
-            $('#slideCommunityMobile').data('owl.carousel').destroy();
-            $('#slideCommunityMobile').removeClass('owl-carousel');
-        }
-    }
-    
 }
 
 function hideBanner() {
@@ -154,3 +135,25 @@ if (noticeModalEl) {
         localStorage.setItem('isShowPopup', true);
     })
 }
+
+$("#slideCommunity").owlCarousel({
+    loop: true,
+    autoplay: true,
+    dots: true,
+    center: true,
+    items: 3,
+    autoplayTimeout: 3000,
+    responsiveClass: true,
+    margin: 30,
+    responsive: {
+        0: {
+            items: 1,
+        },
+        1023: {
+            items: 2,
+        },
+        1200: {
+            items: 3,
+        }
+    }
+});
