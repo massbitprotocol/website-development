@@ -99,6 +99,9 @@ body {
 .mb-60 {
   margin-bottom: 60px;
 }
+.mb-66 {
+  margin-bottom: 66px;
+}
 
 .mw-210 {
   min-width: 210px !important;
@@ -491,6 +494,37 @@ header::before {
   font-size: 20px;
   line-height: 36px;
   color: #434c88;
+}
+.mb-banner-actions {
+  padding-top: 64px;
+}
+.mb-banner-actions .btn {
+  text-align: center;
+  min-width: 220px;
+}
+.mb-banner-actions .btn:first-child {
+  margin-right: 47px;
+}
+@media (max-width: 1399px) {
+  .mb-banner-actions .btn {
+    min-width: auto;
+  }
+  .mb-banner-actions .btn:first-child {
+    margin-right: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .mb-banner-actions {
+    padding-top: 32px;
+  }
+  .mb-banner-actions .btn:first-child {
+    margin-right: 12px;
+  }
+}
+@media (max-width: 576px) {
+  .mb-banner-actions .btn {
+    margin: 0 0 10px 0;
+  }
 }
 
 .mb-section {

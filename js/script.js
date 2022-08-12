@@ -157,3 +157,8 @@ $("#slideCommunity").owlCarousel({
         }
     }
 });
+$("#slideGlowing").owlCarousel({
+    dots: false,
+    items: 1,
+    nav: true
+});
