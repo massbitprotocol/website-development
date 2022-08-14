@@ -1,0 +1,216 @@
+.mb-gateway-settings {
+  .row {
+    @media (min-width: 1200px) {
+      --bs-gutter-x: 30px;
+    }
+  }
+  .mb-gs-production {
+    margin-bottom: 31px;
+    .mb-gs-production-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: $mb-font-family-medium;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 48px;
+      color: $mb-heading-color;
+      margin-bottom: 20px;
+      .mb-gs-production-configs {
+        display: inline-flex;
+        align-items: center;
+        button {
+          background: $mb-lightest-color;
+          border-radius: 4px;
+          width: 36px;
+          height: 36px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          border: 0;
+          outline: 0;
+          margin-right: 12px;
+        }
+        .form-switch {
+          margin-left: 8px;
+          padding-left: 60px;
+          .form-check-input {
+            width: 60px;
+            height: 30px;
+            margin-left: -60px;
+          }
+        }
+      }
+    }
+    .mb-gs-production-summary {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 24px;
+      row-gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      .mb-gs-production-summary-item {
+        .mb-gs-production-summary-label {
+          font-family: $mb-font-family;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+          color: $mb-text-secondary-color;
+          margin-bottom: 6px;
+        }
+        .mb-gs-production-summary-value {
+          display: inline-flex;
+          align-items: center;
+          font-family: $mb-font-family;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 22px;
+          color: $mb-heading-color;
+          button {
+            background: $mb-lightest-color;
+            border-radius: 4px;
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            margin-left: 12px;
+          }
+        }
+      }
+    }
+    .mb-gs-production-stats-item {
+      padding: 24px 24px 28px 28px;
+      background: $mb-white-color;
+      border: 1px solid $mb-border-color;
+      border-radius: 12px;
+      .mb-gs-production-stats-label {
+        font-family: $mb-font-family;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: $mb-text-secondary-color;
+        margin-bottom: 16px;
+      }
+      .mb-gs-production-stats-value {
+        font-family: $mb-font-family-medium;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 40px;
+        letter-spacing: 0.02em;
+        color: $mb-heading-color;
+      }
+    }
+  }
+  .mb-gs-overview {
+    margin-bottom: 40px;
+    .mb-gs-overview-heading {
+      font-family: $mb-font-family-medium;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 40px;
+      letter-spacing: 0.02em;
+      color: $mb-heading-color;
+      margin-bottom: 8px;
+    }
+    .mb-gs-overview-content {
+      padding: 14px 24px 22px 24px;
+      background: $mb-lightest-color;
+      border-radius: 12px;
+      table {
+        margin-bottom: 0;
+        border: 0;
+        tr {
+          td {
+            padding: 10px 0;
+            font-family: $mb-font-family;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: $mb-text-secondary-color;
+            vertical-align: top;
+            &.mb-gs-overview-label {
+              white-space: nowrap;
+              padding-right: 40px;
+            }
+            &.mb-gs-overview-value {
+              color: $mb-heading-color;
+              font-weight: 500;
+              a {
+                color: $mb-primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .mb-gs-choose-blockchain {
+    margin-bottom: 40px;
+    .mb-gs-choose-blockchain-inner {
+      background: $mb-white-color;
+      border: 1px solid $mb-border-color;
+      border-radius: 12px;
+      padding: 20px 20px 30px;
+      .form-group {
+        margin-bottom: 0;
+        .form-control {
+          box-shadow: none !important;
+          outline: 0 !important;
+        }
+        .mb-input-blockchain {
+          position: relative;
+          img {
+            position: absolute;
+            top: 6px;
+            left: 16px;
+          }
+          .form-control {
+            padding-left: 56px;
+            padding-right: 87px;
+          }
+          span {
+            background: $mb-primary-color;
+            border-radius: 4px;
+            position: absolute;
+            top: 11px;
+            right: 20px;
+            font-family: $mb-font-family;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: $mb-white-color;
+            padding: 2px 12px;
+          }
+        }
+        .form-control {
+          color: $mb-heading-color;
+          font-family: $mb-font-family;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+  .mb-gs-stats {
+    .mb-gs-stats-heading {
+      font-family: $mb-font-family-medium;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 40px;
+      letter-spacing: 0.02em;
+      color: $mb-heading-color;
+      margin-bottom: 8px;
+    }
+    .mb-statistics-card-body {
+      padding-top: 31px;
+    }
+  }
+}

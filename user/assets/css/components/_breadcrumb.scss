@@ -1,0 +1,28 @@
+.mb-breadcrumb {
+  margin-bottom: 39px;
+  background: $mb-lightest-color;
+  padding: 12px 0;
+  position: sticky;
+  top: 103px;
+  left: 0;
+  @media (max-width: 991px) {
+    top: 82px;
+  }
+  .breadcrumb {
+    margin-bottom: 0;
+    .breadcrumb-item {
+      font-family: $mb-font-family;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      &.active {
+        font-weight: 500;
+        color: #434c88;
+      }
+      a {
+        color: $mb-text-secondary-color;
+        text-decoration: none;
+      }
+    }
+  }
+}

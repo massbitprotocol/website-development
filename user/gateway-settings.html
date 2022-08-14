@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/fonts/airbnb-cereal-app/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Massbit - Gateway Settings</title>
+</head>
+
+<body>
+  <div class="mb-dashboard-page mb-gateway-settings">
+    <header class="mb-dashboard-header">
+      <div class="container">
+        <div class="mb-auth-dashboard-inner">
+          <a href="#" class="mb-dashboard-logo">
+            <img src="assets/images/logo.svg" alt="Massbit" />
+          </a>
+          <div class="mb-dashboard-menu">
+            <div class="mb-notification dropdown">
+              <button class="dropdown-toggle" type="button" id="ddlNotification" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.5 21.1667C14.5 22.095 14.1313 22.9852 13.4749 23.6416C12.8185 24.298 11.9283 24.6667 11 24.6667C10.0717 24.6667 9.18151 24.298 8.52513 23.6416C7.86875 22.9852 7.50001 22.095 7.50001 21.1667M11.8412 4.83689L10.1308 4.83339C6.22951 4.82406 2.84267 7.99389 2.81584 11.8334V16.2551C2.81584 17.1767 2.69917 18.0762 2.19634 18.8427L1.86151 19.3537C1.35167 20.1284 1.90001 21.1667 2.81584 21.1667H19.1842C20.1 21.1667 20.6472 20.1284 20.1385 19.3537L19.8037 18.8427C19.302 18.0762 19.1842 17.1756 19.1842 16.2539V11.8346C19.1375 7.99389 15.7425 4.84623 11.8412 4.83689V4.83689Z"
+                    stroke="#717591" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M11 1.33337C11.6189 1.33337 12.2124 1.57921 12.6499 2.01679C13.0875 2.45438 13.3334 3.04787 13.3334 3.66671V4.83337H8.66669V3.66671C8.66669 3.04787 8.91252 2.45438 9.3501 2.01679C9.78769 1.57921 10.3812 1.33337 11 1.33337Z"
+                    stroke="#717591" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="ddlNotification">
+                No notification.
+              </div>
+            </div>
+
+            <div class="mb-user-logged dropdown">
+              <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <div class="mb-user-avatar">
+                  <img src="assets/images/avatar.png" alt="User 1" />
+                </div>
+                <span>OnFinality-io</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Referral</a></li>
+                <li><a class="dropdown-item logout" href="#">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mb-breadcrumb">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Gateway Settings</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+
+    <div class="mb-gs-production">
+      <div class="container">
+        <div class="mb-gs-production-heading">
+          <span>Production</span>
+          <div class="mb-gs-production-configs">
+            <button type="button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M13.3919 3.98174L16.0182 6.60884L16.4562 6.1707C17.1813 5.44536 17.1813 4.26952 16.4562 3.54418C15.7308 2.81861 14.5547 2.81861 13.8293 3.54418L13.3919 3.98174Z"
+                  fill="#050C72" />
+                <path d="M14.8124 7.81229L12.1862 5.18519L3.85249 13.5201L3 17L6.47875 16.1472L14.8124 7.81229Z"
+                  fill="#050C72" />
+              </svg>
+            </button>
+            <button type="button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8 3.99388C8 2.89269 8.89543 2 10 2C11.1046 2 12 2.89269 12 3.99388H16C16.5523 3.99388 17 4.44023 17 4.99082C17 5.54142 16.5523 5.98776 16 5.98776H4C3.44772 5.98776 3 5.54142 3 4.99082C3 4.44023 3.44772 3.99388 4 3.99388H8Z"
+                  fill="#050C72" />
+                <path
+                  d="M5 14.5076V8H7V14.5076C7 14.7829 7.22386 15.0061 7.5 15.0061H9V8H11L11 15.0061H12.5C12.7761 15.0061 13 14.7829 13 14.5076V8H15V14.5076C15 15.8841 13.8807 17 12.5 17H7.5C6.11929 17 5 15.8841 5 14.5076Z"
+                  fill="#050C72" />
+              </svg>
+            </button>
+            <div class="form-switch">
+              <input class="form-check-input" type="checkbox" id="switchEnable" checked>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-gs-production-summary">
+          <div class="mb-gs-production-summary-item">
+            <div class="mb-gs-production-summary-label">ID</div>
+            <div class="mb-gs-production-summary-value">
+              <span>8c0f4269-13c8-4fc2-bc55-9960efed45-...-35355</span>
+              <button type="button">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.5 2C6.67157 2 6 2.67157 6 3.5V13C6 13.5523 6.44771 14 7 14H16.5C17.3284 14 18 13.3284 18 12.5V3.5C18 2.67157 17.3284 2 16.5 2H7.5Z"
+                    fill="#27319B" />
+                  <path
+                    d="M3.5 6H4V16H14V16.5C14 17.3284 13.3284 18 12.5 18H3.5C2.67157 18 2 17.3284 2 16.5V7.5C2 6.67157 2.67157 6 3.5 6Z"
+                    fill="#27319B" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="mb-gs-production-summary-item">
+            <div class="mb-gs-production-summary-label">Status</div>
+            <div class="mb-gs-production-summary-value">VERIFIED</div>
+          </div>
+          <div class="mb-gs-production-summary-item">
+            <div class="mb-gs-production-summary-label">Created at</div>
+            <div class="mb-gs-production-summary-value">Dec 02, 2021 10:58:02 AM +UTC</div>
+          </div>
+          <div class="mb-gs-production-summary-item">
+            <div class="mb-gs-production-summary-label">Last updated</div>
+            <div class="mb-gs-production-summary-value">Dec 03, 2021 10:58:02 AM +UTC</div>
+          </div>
+        </div>
+
+        <div class="mb-gs-production-stats">
+          <div class="row">
+            <div class="col-md-6 mb-md-0 mb-3">
+              <div class="mb-gs-production-stats-item">
+                <div class="mb-gs-production-stats-label">Stake time</div>
+                <div class="mb-gs-production-stats-value">69,216,031</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-gs-production-stats-item">
+                <div class="mb-gs-production-stats-label">Earnings</div>
+                <div class="mb-gs-production-stats-value">69,216,031</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-gs-overview">
+      <div class="container">
+        <div class="mb-gs-overview-heading">OVERVIEW</div>
+        <div class="mb-gs-overview-content">
+          <table>
+            <tbody>
+              <tr>
+                <td class="mb-gs-overview-label">IP Address</td>
+                <td class="mb-gs-overview-value">34.92.163.52</td>
+              </tr>
+              <tr>
+                <td class="mb-gs-overview-label">Continent Name</td>
+                <td class="mb-gs-overview-value">Asia</td>
+              </tr>
+              <tr>
+                <td class="mb-gs-overview-label">Country Name</td>
+                <td class="mb-gs-overview-value">Hong Kong SAR China</td>
+              </tr>
+              <tr>
+                <td class="mb-gs-overview-label">City Name</td>
+                <td class="mb-gs-overview-value">Hong Kong</td>
+              </tr>
+              <tr>
+                <td class="mb-gs-overview-label">Latitude</td>
+                <td class="mb-gs-overview-value">22.248310089111</td>
+              </tr>
+              <tr>
+                <td class="mb-gs-overview-label">Longitude</td>
+                <td class="mb-gs-overview-value">114.15239715576</td>
+              </tr>
+              <tr>
+                <td class="mb-gs-overview-label">Install script</td>
+                <td class="mb-gs-overview-value">
+                  <span>sh -c "$(curl 'https://dapi-dev.massbit.io/gateway...</span>
+                  <a href="#">Show More</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-gs-choose-blockchain">
+      <div class="container">
+        <div class="mb-gs-choose-blockchain-inner">
+          <div class="row">
+            <div class="col-md-6 mb-md-0 mb-3">
+              <div class="form-group">
+                <label class="form-label">Choose Blockchain</label>
+                <div class="mb-input-blockchain">
+                  <img src="assets/images/blockchain/ethereum.svg" alt="ETH" />
+                  <input type="text" class="form-control" value="Ethereum" />
+                  <span>ETH</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label">Network</label>
+                <input type="text" class="form-control" value="Mainnet" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-gs-stats">
+      <div class="container">
+        <div class="mb-gs-stats-heading">STATS</div>
+        <div class="mb-gs-stats-content">
+          <div class="row">
+            <div class="col-lg-6 mb-lg-0 mb-3">
+              <div class="mb-statistics-card">
+                <div class="mb-statistics-card-header">
+                  <div>
+                    <div class="mb-statistics-card-title">TOTAL REQUESTS</div>
+                    <div class="mb-statistics-card-value">
+                      <span>116,800</span>
+                      <small>Requests</small>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Last 30 days
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">Last 30 days</a></li>
+                      <li><a class="dropdown-item" href="#">Last 60 days</a></li>
+                      <li><a class="dropdown-item" href="#">Last 90 days</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mb-statistics-card-body">
+                  <img src="assets/images/analystic.svg" alt="Analystic" class="w-100" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="mb-statistics-card">
+                <div class="mb-statistics-card-header">
+                  <div>
+                    <div class="mb-statistics-card-title">TOTAL BANDWIDTH</div>
+                    <div class="mb-statistics-card-value">
+                      <span>11.42</span>
+                      <small>TB</small>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Last 30 days
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">Last 30 days</a></li>
+                      <li><a class="dropdown-item" href="#">Last 60 days</a></li>
+                      <li><a class="dropdown-item" href="#">Last 90 days</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mb-statistics-card-body">
+                  <img src="assets/images/analystic-2.svg" alt="Analystic" class="w-100" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="dropup mb-fixed-notice">
+    <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      <img class="help-icon" src="assets/images/icons/help.svg" alt="Help" />
+      <img class="close-icon" src="assets/images/icons/close.svg" alt="Close" />
+    </button>
+    <div class="dropdown-menu dropdown-menu-end">
+      <h4>Questions or Feedbacks?</h4>
+      <p>If you have any questions about the test, look it up in our guide. </p>
+      <a href="https://docs.massbit.io/massbit-route-mbr/use-massbit-route">
+        <span>See guide to test</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M17.707 9.29301L12.707 4.29301C12.316 3.90201 11.684 3.90201 11.293 4.29301C10.902 4.68401 10.902 5.31601 11.293 5.70701L14.586 9.00001H3C2.447 9.00001 2 9.44801 2 10C2 10.552 2.447 11 3 11H14.586L11.293 14.293C10.902 14.684 10.902 15.316 11.293 15.707C11.488 15.902 11.744 16 12 16C12.256 16 12.512 15.902 12.707 15.707L17.707 10.707C18.098 10.316 18.098 9.68401 17.707 9.29301Z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <p>Any feedback? Feel free to reach out to us at </p>
+      <div class="socials">
+        <a href="https://discord.gg/jXAGgWCKJR" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M4.38641 16.1307H13.8924L13.4384 14.6607C13.5057 14.7193 17.3331 18 17.3331 18V3.65C17.2877 2.758 16.5197 2 15.5677 2L4.38975 2.002C3.43841 2.002 2.66641 2.76133 2.66641 3.65333V14.48C2.66641 15.4207 3.43708 16.1307 4.38641 16.1307ZM11.4184 5.78867L11.3964 5.79667L11.4044 5.78867H11.4184ZM6.33108 6.63467C7.55308 5.74533 8.68575 5.788 8.68575 5.788L8.77708 5.878C7.28175 6.23467 6.60375 6.90267 6.60375 6.90267C6.67308 6.888 9.69241 5.146 13.3511 6.94667C13.3511 6.94667 12.6717 6.322 11.2684 5.922L11.3924 5.8C11.5864 5.80067 12.6131 5.83667 13.7117 6.64C13.7117 6.64 14.9411 8.74 14.9411 11.32C14.9004 11.2707 14.1784 12.4307 12.3204 12.4707C12.3204 12.4707 12.0057 12.1147 11.7817 11.804C12.8684 11.492 13.2751 10.868 13.2751 10.868C11.1597 12.2 9.30575 11.992 7.08775 11.092C7.06708 11.092 7.05775 11.0827 7.04708 11.072V11.068C7.03641 11.058 7.02708 11.048 7.00641 11.048H6.96641C6.83041 10.9587 6.73975 10.9147 6.73975 10.9147C6.73975 10.9147 7.14575 11.5387 8.18908 11.8507C7.91508 12.1633 7.64375 12.5187 7.64375 12.5187C5.78641 12.4747 5.10908 11.3147 5.10908 11.3147C5.10908 8.73067 6.33108 6.63467 6.33108 6.63467Z"
+              fill="#2C3ACF" />
+            <path
+              d="M11.5381 10.514C12.0121 10.514 12.3981 10.114 12.3981 9.62065C12.3981 9.13065 12.0141 8.73065 11.5381 8.73065V8.73265C11.0661 8.73265 10.6795 9.13132 10.6781 9.62465C10.6781 10.114 11.0641 10.514 11.5381 10.514Z"
+              fill="#2C3ACF" />
+            <path
+              d="M8.45958 10.514C8.93358 10.514 9.31958 10.114 9.31958 9.62065C9.31958 9.13065 8.93624 8.73065 8.46224 8.73065L8.45958 8.73265C7.98558 8.73265 7.59958 9.13132 7.59958 9.62465C7.59958 10.114 7.98558 10.514 8.45958 10.514Z"
+              fill="#2C3ACF" />
+          </svg>
+        </a>
+        <a href="https://t.me/+TcdBcurazKA1ZmNl" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M8.27827 12.2269L8.0136 16.1357C8.39227 16.1357 8.55628 15.9649 8.75295 15.7598L10.5283 13.9783L14.2071 16.807C14.8818 17.2018 15.3571 16.9939 15.5391 16.1553L17.9538 4.27498L17.9545 4.27428C18.1685 3.22708 17.5938 2.81758 16.9365 3.07448L2.7428 8.78015C1.77411 9.17495 1.78878 9.74195 2.57813 9.99885L6.20689 11.1839L14.6358 5.64627C15.0324 5.37047 15.3931 5.52307 15.0964 5.79887L8.27827 12.2269Z"
+              fill="#2C3ACF" />
+          </svg>
+        </a>
+        <a href="https://twitter.com/massbitprotocol" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M19 4.65552C18.3253 4.94197 17.6108 5.1298 16.8796 5.21289C17.6471 4.77472 18.2242 4.07986 18.5032 3.25815C17.776 3.66968 16.9829 3.95955 16.1569 4.11565C15.8091 3.76145 15.3907 3.47986 14.9273 3.28805C14.4638 3.09625 13.9651 2.99824 13.4614 3.00002C11.422 3.00002 9.7687 4.58377 9.7687 6.53501C9.7687 6.81151 9.8011 7.08189 9.8641 7.34001C8.40122 7.27237 6.9689 6.909 5.65855 6.27307C4.3482 5.63715 3.18858 4.74265 2.2537 3.64665C1.92594 4.18425 1.75367 4.79795 1.7551 5.42289C1.7551 6.65051 2.4067 7.73289 3.3967 8.36551C2.81124 8.34713 2.23842 8.19517 1.7245 7.92189V7.96564C1.7245 9.67888 2.998 11.1078 4.6855 11.4333C4.36835 11.5151 4.04162 11.5565 3.7135 11.5566C3.475 11.5566 3.2437 11.5348 3.0178 11.491C3.25908 12.1979 3.7208 12.8143 4.33884 13.2544C4.95688 13.6946 5.70056 13.9367 6.4666 13.9471C5.15266 14.9311 3.53964 15.4627 1.8811 15.4582C1.5823 15.4582 1.2889 15.4407 1 15.4092C2.69313 16.4511 4.65633 17.0029 6.6601 17C13.4524 17 17.1658 11.6126 17.1658 6.94101L17.1532 6.48339C17.8776 5.98785 18.5033 5.36851 19 4.65552Z"
+              fill="#2C3ACF" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

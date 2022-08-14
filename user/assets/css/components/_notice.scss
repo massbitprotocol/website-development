@@ -1,0 +1,102 @@
+.mb-fixed-notice {
+  position: fixed;
+  bottom: 58px;
+  right: 78px;
+  z-index: 99;
+  @media (max-width: 1199px) {
+    bottom: 30px;
+    right: 30px;
+  }
+  button {
+    padding: 0;
+    border: 0;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: $mb-primary-darker-color;
+    box-shadow: 0px 8px 20px rgba(1, 0, 63, 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    outline: 0;
+    .close-icon {
+      display: none;
+    }
+    &.show {
+      .close-icon {
+        display: block;
+      }
+      .help-icon {
+        display: none;
+      }
+    }
+    &:after {
+      display: none !important;
+    }
+  }
+  .dropdown-menu {
+    border: 0;
+    background-color: $mb-lightest-color;
+    background-image: url(../images/notice-bg.svg);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    width: 444px;
+    padding: 36px 24px 48px;
+    box-shadow: 0px 0px 1px rgba(30, 38, 49, 0.15),
+      0px 10px 30px rgba(5, 28, 62, 0.3);
+    border-radius: 12px;
+    margin-bottom: 17px !important;
+    h4 {
+      font-family: $mb-font-family-medium;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 30px;
+      color: $mb-primary-darker-color;
+      margin-bottom: 12px;
+    }
+    p {
+      font-family: $mb-font-family;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $mb-primary-darker-color;
+      margin-bottom: 10px;
+    }
+    a {
+      display: inline-flex;
+      align-items: center;
+      padding-top: 3px;
+      margin-bottom: 33px;
+      text-decoration: none;
+      font-family: $mb-font-family;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      color: #2c3acf;
+      &:hover {
+        svg {
+          transform: translateX(5px);
+        }
+      }
+      span {
+        margin-right: 12px;
+      }
+      svg {
+        transition: all ease-in-out 0.3s;
+      }
+    }
+    .socials {
+      a {
+        margin-bottom: 0;
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
+        &:hover {
+          svg {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}

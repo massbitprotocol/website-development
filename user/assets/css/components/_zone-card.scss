@@ -1,0 +1,54 @@
+.mb-zone-card {
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $mb-white-color;
+  border: 1px solid $mb-border-color;
+  border-radius: 12px;
+  .mb-zone-card-info {
+    display: flex;
+    align-items: center;
+    .mb-zone-card-icon {
+      width: 64px;
+      min-width: 64px;
+      height: 64px;
+      margin-right: 16px;
+      img {
+        width: 100%;
+      }
+    }
+    .mb-zone-card-summary {
+      .mb-zone-card-label {
+        font-family: $mb-font-family;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: $mb-text-secondary-color;
+        margin-bottom: 2px;
+      }
+      .mb-zone-card-value {
+        font-family: $mb-font-family-medium;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        color: $mb-primary-darker-color;
+      }
+    }
+  }
+  .mb-zone-card-action {
+    .btn-secondary {
+      background-color: $mb-lightest-color;
+      border-color: $mb-lightest-color;
+      font-family: $mb-font-family-medium;
+      font-size: 16px;
+      line-height: 22px;
+      color: $mb-primary-color;
+      padding: 16px 22px;
+      svg {
+        margin-right: 6px;
+      }
+    }
+  }
+}

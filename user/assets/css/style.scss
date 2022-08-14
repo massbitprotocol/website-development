@@ -1,0 +1,44 @@
+// Core
+@import "./core/variables";
+@import "./core/button";
+@import "./core/form";
+@import "./core/link";
+@import "./core/navbar";
+
+// Components
+@import "./components/header";
+@import "./components/footer";
+@import "./components/notice";
+@import "./components/zone-card";
+@import "./components/statistics-card";
+@import "./components/breadcrumb";
+
+// Layout
+@import "./layout/auth";
+@import "./layout/dashboard";
+
+// Pages
+@import "./pages/dashboard";
+@import "./pages/community-node";
+@import "./pages/gateway-settings";
+
+// Common style
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
