@@ -18,9 +18,12 @@
     <header class="mb-dashboard-header">
       <div class="container">
         <div class="mb-auth-dashboard-inner">
-          <a href="dashboard.html" class="mb-dashboard-logo">
-            <img src="assets/images/logo.svg" alt="Massbit" />
-          </a>
+          <div class="mb-auth-dashboard-heading">
+            <a href="dashboard.html" class="mb-dashboard-logo">
+              <img src="assets/images/logo.svg" alt="Massbit" />
+            </a>
+            <span>Community Gateway</span>
+          </div>
           <div class="mb-dashboard-menu">
             <div class="mb-notification dropdown">
               <button class="dropdown-toggle" type="button" id="ddlNotification" data-bs-toggle="dropdown"
@@ -48,9 +51,9 @@
                 <span>OnFinality-io</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="account-settings.html">Settings</a></li>
                 <li><a class="dropdown-item" href="#">Referral</a></li>
-                <li><a class="dropdown-item logout" href="#">Logout</a></li>
+                <li><a class="dropdown-item logout" href="login.html">Logout</a></li>
               </ul>
             </div>
           </div>
@@ -94,7 +97,8 @@
                   fill="#050C72" />
               </svg>
             </button>
-            <div class="form-switch" data-bs-trigger="hover" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-content="Change status of the node. If you don't want this node active, please switch it off.">
+            <div class="form-switch" data-bs-trigger="hover" data-bs-placement="bottom" data-bs-toggle="popover"
+              data-bs-content="Change status of the node. If you don't want this node active, please switch it off.">
               <input class="form-check-input" type="checkbox" id="switchEnable" checked>
             </div>
           </div>

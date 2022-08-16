@@ -19,7 +19,7 @@
     color: #eb5757;
   }
   .form-label {
-    font-family: $mb-font-family;
+    font-family: $mb-font-family-medium;
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
@@ -28,7 +28,7 @@
   }
   .form-control {
     padding: 12px 20px;
-    font-family: $mb-font-family;
+    font-family: $mb-font-family-medium;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
@@ -38,7 +38,11 @@
     background: $mb-white-color;
     border: 1px solid $mb-border-color;
     border-radius: 8px;
+    color: $mb-primary-darker-color;
+    font-weight: 600;
     &::placeholder {
+      font-weight: 500;
+      font-family: $mb-font-family;
       color: rgba(113, 117, 145, 0.6);
     }
   }

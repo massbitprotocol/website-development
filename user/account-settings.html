@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/fonts/airbnb-cereal-app/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Massbit - Account Settings</title>
+</head>
+
+<body>
+  <div class="mb-dashboard-page bg-white">
+    <header class="mb-dashboard-header">
+      <div class="container">
+        <div class="mb-auth-dashboard-inner">
+          <div class="mb-auth-dashboard-heading">
+            <a href="dashboard.html" class="mb-dashboard-logo">
+              <img src="assets/images/logo.svg" alt="Massbit" />
+            </a>
+            <span>Account Settings</span>
+          </div>
+          <div class="mb-dashboard-menu">
+            <div class="mb-notification dropdown">
+              <button class="dropdown-toggle" type="button" id="ddlNotification" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.5 21.1667C14.5 22.095 14.1313 22.9852 13.4749 23.6416C12.8185 24.298 11.9283 24.6667 11 24.6667C10.0717 24.6667 9.18151 24.298 8.52513 23.6416C7.86875 22.9852 7.50001 22.095 7.50001 21.1667M11.8412 4.83689L10.1308 4.83339C6.22951 4.82406 2.84267 7.99389 2.81584 11.8334V16.2551C2.81584 17.1767 2.69917 18.0762 2.19634 18.8427L1.86151 19.3537C1.35167 20.1284 1.90001 21.1667 2.81584 21.1667H19.1842C20.1 21.1667 20.6472 20.1284 20.1385 19.3537L19.8037 18.8427C19.302 18.0762 19.1842 17.1756 19.1842 16.2539V11.8346C19.1375 7.99389 15.7425 4.84623 11.8412 4.83689V4.83689Z"
+                    stroke="#717591" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M11 1.33337C11.6189 1.33337 12.2124 1.57921 12.6499 2.01679C13.0875 2.45438 13.3334 3.04787 13.3334 3.66671V4.83337H8.66669V3.66671C8.66669 3.04787 8.91252 2.45438 9.3501 2.01679C9.78769 1.57921 10.3812 1.33337 11 1.33337Z"
+                    stroke="#717591" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="ddlNotification">
+                No notification.
+              </div>
+            </div>
+
+            <div class="mb-user-logged dropdown">
+              <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <div class="mb-user-avatar">
+                  <img src="assets/images/avatar.png" alt="User 1" />
+                </div>
+                <span>OnFinality-io</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="account-settings.html">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Referral</a></li>
+                <li><a class="dropdown-item logout" href="login.html">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mb-account-settings">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="mb-account-settings-heading">Account Settings</div>
+            <div class="mb-account-settings-title">Basic Details</div>
+            <div class="mb-account-settings-subtitle">Your profile is public, update your details to show our community
+              who you are</div>
+
+            <div class="mb-account-settings-avatar">
+              <div class="mb-account-settings-avatar-image">
+                <img src="assets/images/avatar.png" alt="" />
+              </div>
+              <div class="mb-account-settings-avatar-upload">
+                <label>Your Avatar</label>
+                <span>We recommend an image of at least 400x400.<br/>Gifs work too.</span>
+                <button type="button" class="btn btn-primary">Choose file</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Display Name</label>
+              <input type="text" class="form-control" value="OnFinality-io" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" value="example@gmail.com" />
+            </div>
+            <div class="mb-account-settings-title" style="margin-bottom: 12px;">Password</div>
+            <div class="form-group">
+              <label class="form-label">Old Password</label>
+              <input type="password" class="form-control" placeholder="Your old password" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">New Password</label>
+              <input type="password" class="form-control" placeholder="New password" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Confirm New Password</label>
+              <input type="password" class="form-control" placeholder="Confirm New nassword" />
+            </div>
+            <div class="form-action">
+              <button type="submit" class="btn btn-primary w-100">Save Change</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

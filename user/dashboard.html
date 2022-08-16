@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/fonts/airbnb-cereal-app/style.css" />
+  <link rel="stylesheet" href="assets/fonts/airbnb-cereal-app/style.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <title>Massbit - Dashboard</title>
 </head>
@@ -18,9 +18,12 @@
     <header class="mb-dashboard-header">
       <div class="container">
         <div class="mb-auth-dashboard-inner">
-          <a href="dashboard.html" class="mb-dashboard-logo">
-            <img src="assets/images/logo.svg" alt="Massbit" />
-          </a>
+          <div class="mb-auth-dashboard-heading">
+            <a href="dashboard.html" class="mb-dashboard-logo">
+              <img src="assets/images/logo.svg" alt="Massbit" />
+            </a>
+            <span>Dashboard</span>
+          </div>
           <div class="mb-dashboard-menu">
             <div class="mb-notification dropdown">
               <button class="dropdown-toggle" type="button" id="ddlNotification" data-bs-toggle="dropdown"
@@ -48,9 +51,9 @@
                 <span>OnFinality-io</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="account-settings.html">Settings</a></li>
                 <li><a class="dropdown-item" href="#">Referral</a></li>
-                <li><a class="dropdown-item logout" href="#">Logout</a></li>
+                <li><a class="dropdown-item logout" href="login.html">Logout</a></li>
               </ul>
             </div>
           </div>
