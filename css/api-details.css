@@ -121,9 +121,23 @@
   .mb-section-api-advantages-tabs
   .nav-tabs
   .nav-item
+  .nav-link
+  span {
+  transition: all ease-in-out 0.3s;
+}
+.mb-section-api-advantages
+  .mb-section-api-advantages-tabs
+  .nav-tabs
+  .nav-item
   .nav-link.active {
   background: rgba(44, 58, 207, 0.1);
 }
+.mb-section-api-advantages
+  .mb-section-api-advantages-tabs
+  .nav-tabs
+  .nav-item
+  .nav-link:hover
+  span,
 .mb-section-api-advantages
   .mb-section-api-advantages-tabs
   .nav-tabs
