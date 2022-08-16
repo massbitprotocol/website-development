@@ -15,6 +15,9 @@
       right: 21px;
     }
   }
+  .form-required {
+    color: #eb5757;
+  }
   .form-label {
     font-family: $mb-font-family;
     font-weight: 500;
@@ -38,6 +41,22 @@
     &::placeholder {
       color: rgba(113, 117, 145, 0.6);
     }
+  }
+  .form-error {
+    font-family: $mb-font-family;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #eb5757;
+    margin-top: 1px;
+  }
+  .form-note {
+    font-family: $mb-font-family;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(113, 117, 145, 0.6);
+    margin-top: 11px;
   }
 }
 .form-action {

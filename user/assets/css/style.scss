@@ -19,7 +19,7 @@
 
 // Pages
 @import "./pages/dashboard";
-@import "./pages/community-node";
+@import "./pages/node-dashboard";
 @import "./pages/gateway-settings";
 
 // Common style
@@ -41,4 +41,27 @@
 ::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
+}
+.popover {
+  border: 0;
+  max-width: 198px;
+  .popover-arrow {
+    &::before {
+      border: 0;
+    }
+    &:after {
+      border-bottom-color: $mb-primary-darker-color;
+    }
+  }
+  .popover-body {
+    background-color: $mb-primary-darker-color;
+    color: $mb-white-color;
+    padding: 9px 12px;
+    font-family: $mb-font-family;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    border-radius: 10px;
+  }
 }

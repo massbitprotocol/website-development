@@ -10,7 +10,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/fonts/airbnb-cereal-app/style.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <title>Massbit - Forgot Password</title>
+  <title>Massbit - Sign Up</title>
 </head>
 
 <body>
@@ -38,29 +38,67 @@
         <div class="mb-auth-form">
           <div class="mb-auth-form-inner">
             <div class="mb-auth-form-title">
-              <h2>Forgot Your Password?</h2>
-              <div class="mb-auth-note text-center">
-                Enter your registered email below <br class="d-lg-block d-none" />
-                to receive password reset instruction
-              </div>
+              <h2>Sign up</h2>
             </div>
             <div class="form-group">
-              <label class="form-label">Email</label>
-              <input type="email" class="form-control" placeholder="Your email" />
+              <label class="form-label">Username <span class="form-required">*</span></label>
+              <input type="text" class="form-control" placeholder="" />
+              <div class="form-error">*This field is required</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email <span class="form-required">*</span></label>
+              <input type="email" class="form-control" placeholder="Email Address" />
             </div>
 
-            <div class="form-group text-center">
-              <button type="submit" class="btn btn-primary w-100">Send</button>
+            <div class="form-group">
+              <label class="form-label">Password <span class="form-required">*</span></label>
+              <div class="mb-password-input">
+                <input type="email" class="form-control" placeholder="Password" />
+                <button type="button">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M21.257 10.962C21.731 11.582 21.731 12.419 21.257 13.038C19.764 14.987 16.182 19 12 19C7.81801 19 4.23601 14.987 2.74301 13.038C2.51239 12.7411 2.38721 12.3759 2.38721 12C2.38721 11.6241 2.51239 11.2589 2.74301 10.962C4.23601 9.013 7.81801 5 12 5C16.182 5 19.764 9.013 21.257 10.962V10.962Z"
+                      stroke="#717591" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path
+                      d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                      stroke="#717591" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div class="form-action pt-0 text-center">
-              <a href="login.html">Back to Login</a>
+
+            <div class="form-group">
+              <label class="form-label">Confirm password <span class="form-required">*</span></label>
+              <div class="mb-password-input">
+                <input type="email" class="form-control" placeholder="Password" />
+                <button type="button">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M21.257 10.962C21.731 11.582 21.731 12.419 21.257 13.038C19.764 14.987 16.182 19 12 19C7.81801 19 4.23601 14.987 2.74301 13.038C2.51239 12.7411 2.38721 12.3759 2.38721 12C2.38721 11.6241 2.51239 11.2589 2.74301 10.962C4.23601 9.013 7.81801 5 12 5C16.182 5 19.764 9.013 21.257 10.962V10.962Z"
+                      stroke="#717591" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path
+                      d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                      stroke="#717591" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+              <div class="form-note">Password must contain at least four characters, at least one number and both lower and uppercase letters</div>
+            </div>
+
+            <div style="padding-top: 34px;">
+              <a href="sign-up-success.html" class="btn btn-primary text-white w-100">Creat an Account</a>
             </div>
           </div>
         </div>
       </div>
       <div class="col-lg-6 d-lg-block d-none">
         <div class="mb-auth-banner">
-          <img src="assets/images/forgot-password.png" alt="Forgot Password Massbit" />
+          <img src="assets/images/login.png" alt="Login Massbit" />
+          <h2>Welcome to MassBit</h2>
         </div>
       </div>
     </div>

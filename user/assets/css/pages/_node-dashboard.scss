@@ -1,0 +1,217 @@
+.mb-node-dashboard {
+  .row {
+    @media (min-width: 1200px) {
+      --bs-gutter-x: 30px;
+    }
+  }
+  .mb-dashboard-banner {
+    padding: 110px 0;
+    margin-bottom: 65px;
+    &::before {
+      background-image: url(../images/node-dashboard-banner.svg);
+      mix-blend-mode: normal;
+    }
+  }
+  .mb-cn-node {
+    margin-bottom: 96px;
+    .mb-cn-node-heading {
+      font-family: $mb-font-family-medium;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 48px;
+      color: $mb-heading-color;
+      margin-bottom: 51px;
+    }
+    .mb-cn-node-content {
+      padding: 30px 30px 39px;
+      background: $mb-white-color;
+      border: 1px solid $mb-border-color;
+      border-radius: 12px;
+      text-align: center;
+      p {
+        font-family: $mb-font-family;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
+        color: #434c88;
+        margin-bottom: 32px;
+        a {
+          text-decoration: underline;
+          color: $mb-primary-color;
+        }
+      }
+      .btn {
+        svg {
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+  .mb-cn-gateway {
+    margin-bottom: 40px;
+    .mb-cn-gateway-heading {
+      font-family: $mb-font-family-medium;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 48px;
+      color: $mb-heading-color;
+      margin-bottom: 51px;
+    }
+    .mb-cn-gateway-card {
+      padding: 28px 55.08px;
+      background: $mb-white-color;
+      border: 1px solid $mb-border-color;
+      border-radius: 12px;
+      &.sm {
+        padding: 43px 58px 41px;
+      }
+      @media (max-width: 767px) {
+        padding: 24px;
+        &.sm {
+          padding: 24px;
+        }
+      }
+      .mb-cn-gateway-label {
+        font-family: $mb-font-family;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: $mb-text-secondary-color;
+        margin-bottom: 16px;
+
+        @media (max-width: 767px) {
+          margin-bottom: 5px;
+        }
+      }
+      .mb-cn-gateway-value {
+        font-family: $mb-font-family-medium;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 30px;
+        color: $mb-heading-color;
+      }
+      .mb-cn-gateway-chart-title {
+        font-family: $mb-font-family-medium;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        color: $mb-text-secondary-color;
+      }
+    }
+  }
+  .mb-cn-zone {
+    padding-bottom: 114px;
+    .mb-cn-zone-heading {
+      font-family: $mb-font-family-medium;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 40px;
+      letter-spacing: 0.02em;
+      color: $mb-heading-color;
+      margin-bottom: 8px;
+    }
+  }
+  .mb-cn-statistics {
+    .mb-cn-statistics-heading {
+      font-family: $mb-font-family-medium;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 40px;
+      letter-spacing: 0.02em;
+      color: $mb-heading-color;
+      margin-bottom: 22px;
+    }
+  }
+}
+.mb-cn-settings {
+  margin-bottom: 71px;
+  .mb-cn-settings-inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 20px;
+    background: $mb-white-color;
+    border: 1px solid $mb-border-color;
+    border-radius: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    .mb-cn-settings-item {
+      .mb-cn-settings-label {
+        font-family: $mb-font-family-medium;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: $mb-text-secondary-color;
+        margin-bottom: 12px;
+        @media (max-width: 767px) {
+          margin-bottom: 5px;
+        }
+        &.chk {
+          margin-bottom: 11px;
+        }
+        &.main-title {
+          margin-bottom: 4px;
+          font-family: $mb-font-family-medium;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 28px;
+          color: $mb-heading-color;
+        }
+      }
+    }
+    .mb-cn-settings-value {
+      font-family: $mb-font-family-medium;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: #434c88;
+      .form-switch {
+        margin-left: 0;
+        padding-left: 60px;
+        .form-check-input {
+          width: 60px;
+          height: 30px;
+          margin-left: -60px;
+        }
+      }
+      .mb-cn-settings-wallet {
+        display: inline-flex;
+        align-items: center;
+        font-family: $mb-font-family-medium;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: #434c88;
+        button {
+          background: $mb-lightest-color;
+          border-radius: 4px;
+          width: 36px;
+          height: 36px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          border: 0;
+          outline: 0;
+          margin-left: 12px;
+        }
+      }
+    }
+    .mb-cn-settings-button {
+      display: inline-flex;
+      background: $mb-lightest-color;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: $mb-font-family-medium;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: $mb-primary-color;
+      padding: 15px 14px;
+    }
+  }
+}
+
+#SectionData{
+  display: none;
+}

@@ -120,12 +120,29 @@
           color: $mb-heading-color;
         }
       }
-      .form-action{
-        a{
+      .form-action {
+        a {
           font-weight: 500;
           font-size: 16px;
           line-height: 22px;
           color: $mb-primary-darker-color;
+        }
+      }
+      .mb-auth-form-result {
+        font-family: $mb-font-family;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #434c88;
+        text-align: center;
+        b {
+          font-family: $mb-font-family;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 28px;
+          color: $mb-primary-darker-color;
+          display: block;
+          margin-bottom: 11px;
         }
       }
     }

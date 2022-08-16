@@ -10,15 +10,15 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/fonts/airbnb-cereal-app/style.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <title>Massbit - Community Node</title>
+  <title>Massbit - Node Settings</title>
 </head>
 
 <body>
-  <div class="mb-dashboard-page mb-community-nodes">
+  <div class="mb-dashboard-page mb-gateway-settings">
     <header class="mb-dashboard-header">
       <div class="container">
         <div class="mb-auth-dashboard-inner">
-          <a href="#" class="mb-dashboard-logo">
+          <a href="dashboard.html" class="mb-dashboard-logo">
             <img src="assets/images/logo.svg" alt="Massbit" />
           </a>
           <div class="mb-dashboard-menu">
@@ -58,58 +58,91 @@
       </div>
     </header>
 
-    <div class="mb-dashboard-banner">
+    <div class="mb-breadcrumb">
       <div class="container">
-        <div class="mb-dashboard-banner-inner">
-          <h2>Welcome to Community Nodes</h2>
-        </div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Gateway Settings</li>
+          </ol>
+        </nav>
       </div>
     </div>
 
-    <div class="mb-cn-node">
-      <div class="container">
-        <div class="mb-cn-node-heading">YOUR NODE</div>
-        <div class="mb-cn-node-content">
-          <p>You have no node yet. Read our guide to create node <a href="#">here</a></p>
-          <button type="button" class="btn btn-primary">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M17 9H11V3C11 2.448 10.553 2 10 2C9.447 2 9 2.448 9 3V9H3C2.447 9 2 9.448 2 10C2 10.552 2.447 11 3 11H9V17C9 17.552 9.447 18 10 18C10.553 18 11 17.552 11 17V11H17C17.553 11 18 10.552 18 10C18 9.448 17.553 9 17 9Z"
-                fill="white" />
-            </svg>
-            <span>Create New Node</span>
-          </button>
-        </div>
-      </div>
-    </div>
 
-    <div class="mb-cn-gateway">
+    <div class="mb-gs-production">
       <div class="container">
-        <div class="mb-cn-gateway-heading">Your Gateway</div>
-        <div class="mb-cn-gateway-content">
+        <div class="mb-gs-production-heading">
+          <span>Production</span>
+          <div class="mb-gs-production-configs">
+            <button type="button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M13.3919 3.98174L16.0182 6.60884L16.4562 6.1707C17.1813 5.44536 17.1813 4.26952 16.4562 3.54418C15.7308 2.81861 14.5547 2.81861 13.8293 3.54418L13.3919 3.98174Z"
+                  fill="#050C72" />
+                <path d="M14.8124 7.81229L12.1862 5.18519L3.85249 13.5201L3 17L6.47875 16.1472L14.8124 7.81229Z"
+                  fill="#050C72" />
+              </svg>
+            </button>
+            <button type="button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8 3.99388C8 2.89269 8.89543 2 10 2C11.1046 2 12 2.89269 12 3.99388H16C16.5523 3.99388 17 4.44023 17 4.99082C17 5.54142 16.5523 5.98776 16 5.98776H4C3.44772 5.98776 3 5.54142 3 4.99082C3 4.44023 3.44772 3.99388 4 3.99388H8Z"
+                  fill="#050C72" />
+                <path
+                  d="M5 14.5076V8H7V14.5076C7 14.7829 7.22386 15.0061 7.5 15.0061H9V8H11L11 15.0061H12.5C12.7761 15.0061 13 14.7829 13 14.5076V8H15V14.5076C15 15.8841 13.8807 17 12.5 17H7.5C6.11929 17 5 15.8841 5 14.5076Z"
+                  fill="#050C72" />
+              </svg>
+            </button>
+            <div class="form-switch" data-bs-trigger="hover" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-content="Change status of the node. If you don't want this node active, please switch it off.">
+              <input class="form-check-input" type="checkbox" id="switchEnable" checked>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-gs-production-summary">
+          <div class="mb-gs-production-summary-item">
+            <div class="mb-gs-production-summary-label">ID</div>
+            <div class="mb-gs-production-summary-value">
+              <span>8c0f4269-13c8-4fc2-bc55-9960efed45-...-35355</span>
+              <button type="button">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.5 2C6.67157 2 6 2.67157 6 3.5V13C6 13.5523 6.44771 14 7 14H16.5C17.3284 14 18 13.3284 18 12.5V3.5C18 2.67157 17.3284 2 16.5 2H7.5Z"
+                    fill="#27319B" />
+                  <path
+                    d="M3.5 6H4V16H14V16.5C14 17.3284 13.3284 18 12.5 18H3.5C2.67157 18 2 17.3284 2 16.5V7.5C2 6.67157 2.67157 6 3.5 6Z"
+                    fill="#27319B" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="mb-gs-production-summary-item">
+            <div class="mb-gs-production-summary-label">Status</div>
+            <div class="mb-gs-production-summary-value">VERIFIED</div>
+          </div>
+          <div class="mb-gs-production-summary-item">
+            <div class="mb-gs-production-summary-label">Created at</div>
+            <div class="mb-gs-production-summary-value">Dec 02, 2021 10:58:02 AM +UTC</div>
+          </div>
+          <div class="mb-gs-production-summary-item">
+            <div class="mb-gs-production-summary-label">Last updated</div>
+            <div class="mb-gs-production-summary-value">Dec 03, 2021 10:58:02 AM +UTC</div>
+          </div>
+        </div>
+
+        <div class="mb-gs-production-stats">
           <div class="row">
-            <div class="col-lg-6 mb-lg-0 mb-3">
-              <div class="mb-cn-gateway-card">
-                <img src="assets/images/chart.svg" alt="Chart" class="w-100" />
-                <!-- <div class="mb-cn-gateway-chart-title">Total number gateways</div> -->
+            <div class="col-md-6 mb-md-0 mb-3">
+              <div class="mb-gs-production-stats-item">
+                <div class="mb-gs-production-stats-label">Stake time</div>
+                <div class="mb-gs-production-stats-value">69,216,031</div>
               </div>
             </div>
-            <div class="col-lg-6">
-              <div class="mb-cn-gateway-card sm">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="mb-cn-gateway-label">Staking amount</div>
-                    <div class="mb-cn-gateway-value">69,216,031</div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="mb-cn-gateway-label">Staking rate</div>
-                    <div class="mb-cn-gateway-value">20%</div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="mb-cn-gateway-label">Total earning</div>
-                    <div class="mb-cn-gateway-value">69,216,031</div>
-                  </div>
-                </div>
+            <div class="col-md-6">
+              <div class="mb-gs-production-stats-item">
+                <div class="mb-gs-production-stats-label">Earnings</div>
+                <div class="mb-gs-production-stats-value">69,216,031</div>
               </div>
             </div>
           </div>
@@ -117,147 +150,67 @@
       </div>
     </div>
 
-    <div class="mb-cn-zone">
+    <div class="mb-gs-overview">
       <div class="container">
-        <div class="mb-cn-zone-heading">ZONES</div>
-        <div class="mb-cn-zone-content">
+        <div class="mb-gs-overview-heading">OVERVIEW</div>
+        <div class="mb-gs-overview-content">
+          <table>
+            <tbody>
+              <tr>
+                <td class="mb-gs-overview-label">IP Address</td>
+                <td class="mb-gs-overview-value">34.92.163.52</td>
+              </tr>
+              <tr>
+                <td class="mb-gs-overview-label">Continent Name</td>
+                <td class="mb-gs-overview-value">Asia</td>
+              </tr>
+              <tr>
+                <td class="mb-gs-overview-label">Country Name</td>
+                <td class="mb-gs-overview-value">Hong Kong SAR China</td>
+              </tr>
+              <tr>
+                <td class="mb-gs-overview-label">City Name</td>
+                <td class="mb-gs-overview-value">Hong Kong</td>
+              </tr>
+              <tr>
+                <td class="mb-gs-overview-label">Latitude</td>
+                <td class="mb-gs-overview-value">22.248310089111</td>
+              </tr>
+              <tr>
+                <td class="mb-gs-overview-label">Longitude</td>
+                <td class="mb-gs-overview-value">114.15239715576</td>
+              </tr>
+              <tr>
+                <td class="mb-gs-overview-label">Install script</td>
+                <td class="mb-gs-overview-value">
+                  <span>sh -c "$(curl 'https://dapi-dev.massbit.io/gateway...</span>
+                  <a href="#">Show More</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-gs-choose-blockchain">
+      <div class="container">
+        <div class="mb-gs-choose-blockchain-inner">
           <div class="row">
-            <div class="col-md-6">
-              <div class="mb-zone-card">
-                <div class="mb-zone-card-info">
-                  <div class="mb-zone-card-icon">
-                    <img src="assets/images/zone/asia.svg" alt="z" />
-                  </div>
-                  <div class="mb-zone-card-summary">
-                    <div class="mb-zone-card-label">Asia</div>
-                    <div class="mb-zone-card-value">256 Nodes</div>
-                  </div>
-                </div>
-                <div class="mb-zone-card-action">
-                  <button type="button" class="btn btn-secondary">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M17 9H11V3C11 2.448 10.553 2 10 2C9.447 2 9 2.448 9 3V9H3C2.447 9 2 9.448 2 10C2 10.552 2.447 11 3 11H9V17C9 17.552 9.447 18 10 18C10.553 18 11 17.552 11 17V11H17C17.553 11 18 10.552 18 10C18 9.448 17.553 9 17 9Z"
-                        fill="currentColor" />
-                    </svg>
-                    <span>Add Gateway</span>
-                  </button>
+            <div class="col-md-6 mb-md-0 mb-3">
+              <div class="form-group">
+                <label class="form-label">Choose Blockchain</label>
+                <div class="mb-input-blockchain">
+                  <img src="assets/images/blockchain/ethereum.svg" alt="ETH" />
+                  <input type="text" class="form-control" value="Ethereum" />
+                  <span>ETH</span>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
-              <div class="mb-zone-card">
-                <div class="mb-zone-card-info">
-                  <div class="mb-zone-card-icon">
-                    <img src="assets/images/zone/europe.svg" alt="z" />
-                  </div>
-                  <div class="mb-zone-card-summary">
-                    <div class="mb-zone-card-label">Europe</div>
-                    <div class="mb-zone-card-value">198 Nodes</div>
-                  </div>
-                </div>
-                <div class="mb-zone-card-action">
-                  <button type="button" class="btn btn-secondary">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M17 9H11V3C11 2.448 10.553 2 10 2C9.447 2 9 2.448 9 3V9H3C2.447 9 2 9.448 2 10C2 10.552 2.447 11 3 11H9V17C9 17.552 9.447 18 10 18C10.553 18 11 17.552 11 17V11H17C17.553 11 18 10.552 18 10C18 9.448 17.553 9 17 9Z"
-                        fill="currentColor" />
-                    </svg>
-                    <span>Add Gateway</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="mb-zone-card">
-                <div class="mb-zone-card-info">
-                  <div class="mb-zone-card-icon">
-                    <img src="assets/images/zone/north-america..svg" alt="z" />
-                  </div>
-                  <div class="mb-zone-card-summary">
-                    <div class="mb-zone-card-label">North America</div>
-                    <div class="mb-zone-card-value">244 Nodes</div>
-                  </div>
-                </div>
-                <div class="mb-zone-card-action">
-                  <button type="button" class="btn btn-secondary">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M17 9H11V3C11 2.448 10.553 2 10 2C9.447 2 9 2.448 9 3V9H3C2.447 9 2 9.448 2 10C2 10.552 2.447 11 3 11H9V17C9 17.552 9.447 18 10 18C10.553 18 11 17.552 11 17V11H17C17.553 11 18 10.552 18 10C18 9.448 17.553 9 17 9Z"
-                        fill="currentColor" />
-                    </svg>
-                    <span>Add Gateway</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="mb-zone-card">
-                <div class="mb-zone-card-info">
-                  <div class="mb-zone-card-icon">
-                    <img src="assets/images/zone/south-america.svg" alt="z" />
-                  </div>
-                  <div class="mb-zone-card-summary">
-                    <div class="mb-zone-card-label">South America</div>
-                    <div class="mb-zone-card-value">128 Nodes</div>
-                  </div>
-                </div>
-                <div class="mb-zone-card-action">
-                  <button type="button" class="btn btn-secondary">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M17 9H11V3C11 2.448 10.553 2 10 2C9.447 2 9 2.448 9 3V9H3C2.447 9 2 9.448 2 10C2 10.552 2.447 11 3 11H9V17C9 17.552 9.447 18 10 18C10.553 18 11 17.552 11 17V11H17C17.553 11 18 10.552 18 10C18 9.448 17.553 9 17 9Z"
-                        fill="currentColor" />
-                    </svg>
-                    <span>Add Gateway</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="mb-zone-card">
-                <div class="mb-zone-card-info">
-                  <div class="mb-zone-card-icon">
-                    <img src="assets/images/zone/australia.svg" alt="z" />
-                  </div>
-                  <div class="mb-zone-card-summary">
-                    <div class="mb-zone-card-label">Australia</div>
-                    <div class="mb-zone-card-value">244 Nodes</div>
-                  </div>
-                </div>
-                <div class="mb-zone-card-action">
-                  <button type="button" class="btn btn-secondary">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M17 9H11V3C11 2.448 10.553 2 10 2C9.447 2 9 2.448 9 3V9H3C2.447 9 2 9.448 2 10C2 10.552 2.447 11 3 11H9V17C9 17.552 9.447 18 10 18C10.553 18 11 17.552 11 17V11H17C17.553 11 18 10.552 18 10C18 9.448 17.553 9 17 9Z"
-                        fill="currentColor" />
-                    </svg>
-                    <span>Add Gateway</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="mb-zone-card">
-                <div class="mb-zone-card-info">
-                  <div class="mb-zone-card-icon">
-                    <img src="assets/images/zone/africa.svg" alt="z" />
-                  </div>
-                  <div class="mb-zone-card-summary">
-                    <div class="mb-zone-card-label">Africa</div>
-                    <div class="mb-zone-card-value">67 Nodes</div>
-                  </div>
-                </div>
-                <div class="mb-zone-card-action">
-                  <button type="button" class="btn btn-secondary">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M17 9H11V3C11 2.448 10.553 2 10 2C9.447 2 9 2.448 9 3V9H3C2.447 9 2 9.448 2 10C2 10.552 2.447 11 3 11H9V17C9 17.552 9.447 18 10 18C10.553 18 11 17.552 11 17V11H17C17.553 11 18 10.552 18 10C18 9.448 17.553 9 17 9Z"
-                        fill="currentColor" />
-                    </svg>
-                    <span>Add Gateway</span>
-                  </button>
-                </div>
+              <div class="form-group">
+                <label class="form-label">Network</label>
+                <input type="text" class="form-control" value="Mainnet" />
               </div>
             </div>
           </div>
@@ -265,17 +218,20 @@
       </div>
     </div>
 
-    <div class="mb-cn-statistics">
+    <div class="mb-gs-stats">
       <div class="container">
-        <div class="mb-cn-statistics-heading">STATISTICS</div>
-        <div class="mb-cn-statistics-content">
+        <div class="mb-gs-stats-heading">STATS</div>
+        <div class="mb-gs-stats-content">
           <div class="row">
             <div class="col-lg-6 mb-lg-0 mb-3">
               <div class="mb-statistics-card">
                 <div class="mb-statistics-card-header">
                   <div>
                     <div class="mb-statistics-card-title">TOTAL REQUESTS</div>
-                    <div class="mb-statistics-card-value">0</div>
+                    <div class="mb-statistics-card-value">
+                      <span>116,800</span>
+                      <small>Requests</small>
+                    </div>
                   </div>
                   <div class="dropdown">
                     <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
@@ -290,7 +246,7 @@
                   </div>
                 </div>
                 <div class="mb-statistics-card-body">
-                  <div class="mb-statistics-card-no-data">No available data</div>
+                  <img src="assets/images/analystic.svg" alt="Analystic" class="w-100" />
                 </div>
               </div>
             </div>
@@ -300,7 +256,10 @@
                 <div class="mb-statistics-card-header">
                   <div>
                     <div class="mb-statistics-card-title">TOTAL BANDWIDTH</div>
-                    <div class="mb-statistics-card-value">0</div>
+                    <div class="mb-statistics-card-value">
+                      <span>11.42</span>
+                      <small>TB</small>
+                    </div>
                   </div>
                   <div class="dropdown">
                     <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
@@ -315,7 +274,7 @@
                   </div>
                 </div>
                 <div class="mb-statistics-card-body">
-                  <div class="mb-statistics-card-no-data">No available data</div>
+                  <img src="assets/images/analystic-2.svg" alt="Analystic" class="w-100" />
                 </div>
               </div>
             </div>
